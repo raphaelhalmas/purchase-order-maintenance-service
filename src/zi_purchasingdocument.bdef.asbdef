@@ -1,0 +1,29 @@
+managed implementation in class zbp_i_purchasingdocument unique;
+//strict;
+
+define behavior for ZI_PurchasingDocument alias PurchasingDocument
+persistent table zdt_ekko
+lock master
+//authorization master ( instance )
+etag master LastChangedAt
+{
+  mapping for zdt_ekko
+  {
+    PurchasingDocument = ebeln;
+    CompanyCode = bukrs;
+    PurchasingDocumentCategory = bstyp;
+    PurchasingDocumentType = bsart;
+    Supplier = lifnr;
+    PurchasingDocumentOrderDate = bedat;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+  }
+
+  field ( readonly ) CreatedBy, CreatedAt, LastChangedBy, LastChangedAt;
+
+  create;
+  update;
+  delete;
+}

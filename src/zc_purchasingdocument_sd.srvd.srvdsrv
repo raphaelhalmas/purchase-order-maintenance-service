@@ -1,0 +1,4 @@
+@EndUserText.label: 'Purchasing Document SD'
+define service ZC_PurchasingDocument_SD {
+  expose ZC_PurchasingDocument;
+}
