@@ -21,18 +21,20 @@ define root view entity ZC_PurchasingDocument
   
   @UI.selectionField: [{ position: 20 }]
   @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_Supplier', element: 'Supplier' } }]
-  Supplier,
-  
   @UI.lineItem: [ { position: 20, importance: #HIGH, label: 'Supplier' } ]
   @ObjectModel: { text.element: [ 'SupplierName' ] }
+  Supplier,
+  
+  @UI.hidden: true
   SupplierName,
   
   @UI.selectionField: [{ position: 30 }]
-  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_CompanyCode', element: 'CompanyCode' } }]  
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_CompanyCode', element: 'CompanyCode' } }]
+  @UI.lineItem: [ { position: 30, importance: #HIGH, label: 'Company Code' } ]
+  @ObjectModel: { text.element: [ 'CompanyCodeName' ] }  
   CompanyCode,
   
-  @UI.lineItem: [ { position: 30, importance: #HIGH, label: 'Company Code' } ]
-  @ObjectModel: { text.element: [ 'CompanyCodeName' ] }
+  @UI.hidden: true
   CompanyCodeName
     
 }
