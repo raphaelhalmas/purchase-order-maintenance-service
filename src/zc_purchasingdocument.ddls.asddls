@@ -19,6 +19,10 @@ define root view entity ZC_PurchasingDocument
   key PurchasingDocument,
   PurchaseOrderTypeName,
   
+  @UI.selectionField: [{ position: 20 }]
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_Supplier', element: 'Supplier' } }]  
+  Supplier,
+  
   @UI.lineItem: [ { position: 20, importance: #HIGH, label: 'Supplier' } ]
   @ObjectModel: { text.element: [ 'SupplierName' ] }
   SupplierName,
