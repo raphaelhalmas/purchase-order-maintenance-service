@@ -4,13 +4,13 @@
   <asx:values>
    <SRVB>
     <METADATA>
-     <NAME>ZC_PURCHASINGDOCUMENT_SD</NAME>
+     <NAME>ZC_PURCHASINGDOCUMENT_SB</NAME>
      <TYPE>SRVB/SVB</TYPE>
-     <DESCRIPTION>Purchasing Document SB</DESCRIPTION>
+     <DESCRIPTION>Service binding for ZC_PURCHASINGDOCUMENT_SD</DESCRIPTION>
      <LANGUAGE>EN</LANGUAGE>
      <LINKS>
       <item>
-       <HREF>/sap/bc/adt/businessservices/odatav2/ZC_PURCHASINGDOCUMENT_SD</HREF>
+       <HREF>/sap/bc/adt/businessservices/odatav2/ZC_PURCHASINGDOCUMENT_SB</HREF>
        <REL>http://www.sap.com/categories/odatav2</REL>
        <TYPE>application/vnd.sap.adt.businessservices.odatav2.v2+xml</TYPE>
        <TITLE>ODATAV2</TITLE>
@@ -26,13 +26,13 @@
     </METADATA>
     <CONTENT>
      <BIND_TYPE_IMPL>
-      <NAME>ZC_PURCHASINGDOCUMENT_SD</NAME>
+      <NAME>ZC_PURCHASINGDOCUMENT_SB</NAME>
      </BIND_TYPE_IMPL>
      <BIND_TYPE>ODATA</BIND_TYPE>
      <BIND_TYPE_VERSION>V2</BIND_TYPE_VERSION>
      <SERVICES>
       <item>
-       <SERVICE_NAME>ZC_PURCHASINGDOCUMENT_SD</SERVICE_NAME>
+       <SERVICE_NAME>ZC_PURCHASINGDOCUMENT_SB</SERVICE_NAME>
        <SERVICE_CONTENT>
         <item>
          <SERVICE_VERSION>0001</SERVICE_VERSION>

@@ -10,16 +10,21 @@ define root view entity ZI_PurchasingDocument as select from zdt_ekko
    and _PurchaseOrderTypeText.PurchasingDocumentCategory = 'F'
 
   association [0..1] to ZI_CompanyCode as _CompanyCode on $projection.CompanyCode = _CompanyCode.CompanyCode
-    association [0..1] to ZI_Supplier as _Supplier on $projection.Supplier = _Supplier.Supplier
+  association [0..1] to ZI_Supplier as _Supplier on $projection.Supplier = _Supplier.Supplier
 {
   key ebeln as PurchasingDocument,
+  
   bukrs as CompanyCode,
+  _CompanyCode.CompanyCodeName as CompanyCodeName,
+  
   bstyp as PurchasingDocumentCategory,
     
   bsart as PurchasingDocumentType,
   _PurchaseOrderTypeText.PurchasingDocumentTypeName as PurchaseOrderTypeName,
     
   lifnr as Supplier,
+  _Supplier.SupplierName as SupplierName, 
+  
   bedat as PurchasingDocumentOrderDate, 
     
   @Semantics.user.createdBy: true
