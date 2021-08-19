@@ -31,7 +31,25 @@ annotate view ZC_PurchasingDocument with
     parentId: 'GeneralInformationCollectionFacet',
     purpose: #STANDARD,
     targetQualifier: 'FieldGroup2'
-  }]
+  },
+   
+  { 
+    id:'FieldGroupReferenceFacet3',
+    type:#FIELDGROUP_REFERENCE,
+    parentId: 'GeneralInformationCollectionFacet',
+    purpose: #STANDARD,
+    targetQualifier: 'FieldGroup3'
+  },   
+   
+  {
+    id:'ItemsLineItemReferenceFacet',
+    type: #LINEITEM_REFERENCE,
+    purpose: #STANDARD,
+    label: 'Items',
+    targetElement: '_PurchasingDocumentItem'
+  }
+  
+  ]
 
   @UI: {
     lineItem: [ { position: 10, importance: #HIGH, label: 'Purchase Order' } ],
@@ -51,11 +69,25 @@ annotate view ZC_PurchasingDocument with
   
   @UI.selectionField: [{ position: 30 }]
   @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_CompanyCode', element: 'CompanyCode' } }]
-  @UI.fieldGroup: [{position: 10, label: 'Company Code', qualifier: 'FieldGroup2' }]
+  @UI.fieldGroup: [{position: 30, label: 'Company Code', qualifier: 'FieldGroup3' }]
   @UI.lineItem: [ { position: 30, importance: #HIGH, label: 'Company Code' } ]
   CompanyCode;
   
   @UI.hidden: true
   CompanyCodeName;
-    
+  
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_PurchasingOrganization', element: 'PurchasingOrganization' } }]
+  @UI.fieldGroup: [{position: 10, label: 'Purchasing Organization', qualifier: 'FieldGroup2' }]
+  PurchasingOrganization;
+  
+  @UI.hidden: true
+  PurchasingOrganizationName;  
+  
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_PurchasingGroup', element: 'PurchasingGroup' } }]
+  @UI.fieldGroup: [{position: 20, label: 'Purchasing Group', qualifier: 'FieldGroup2' }]
+  PurchasingGroup;
+  
+  @UI.hidden: true
+  PurchasingGroupName;
+  
 }

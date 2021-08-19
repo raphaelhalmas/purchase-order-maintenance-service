@@ -14,6 +14,8 @@ etag master LastChangedAt
     PurchasingDocumentCategory = bstyp;
     PurchasingDocumentType = bsart;
     Supplier = lifnr;
+    PurchasingOrganization = ekorg;
+    PurchasingGroup = ekgrp;
     PurchasingDocumentOrderDate = bedat;
     CreatedBy = created_by;
     CreatedAt = created_at;
@@ -26,4 +28,29 @@ etag master LastChangedAt
   //create;
   //update;
   //delete;
+}
+
+define behavior for ZI_PurchasingDocumentItem alias PurchasingDocumentItem
+persistent table zdt_ekpo
+lock dependent by _PurchasingDocument
+//authorization master ( instance )
+{
+  mapping for zdt_ekpo
+  {
+    PurchasingDocument = ebeln;
+    PurchasingDocumentItem = ebelp;
+    Material = matnr;
+    PurchasingDocumentItemText = txz01;
+    OrderQuantity = menge;
+    OrderQuantityUnit = meins;
+    NetPriceAmount = netpr;
+  }
+
+  field( readonly ) PurchasingDocument;
+
+  //create;
+  //update;
+  //delete;
+
+  association _PurchasingDocument;
 }

@@ -16,6 +16,8 @@ define root view entity ZI_PurchasingDocument
 
   association [0..1] to ZI_CompanyCode as _CompanyCode on $projection.CompanyCode = _CompanyCode.CompanyCode
   association [0..1] to ZI_Supplier as _Supplier on $projection.Supplier = _Supplier.Supplier
+  association [0..1] to ZI_PurchasingOrganization as _PurchasingOrganization on $projection.PurchasingOrganization = _PurchasingOrganization.PurchasingOrganization
+  association [0..1] to ZI_PurchasingGroup as _PurchasingGroup on $projection.PurchasingGroup = _PurchasingGroup.PurchasingGroup
 {
   key ebeln as PurchasingDocument,
   
@@ -29,6 +31,12 @@ define root view entity ZI_PurchasingDocument
     
   lifnr as Supplier,
   _Supplier.SupplierName as SupplierName, 
+
+  ekorg as PurchasingOrganization,
+  _PurchasingOrganization.PurchasingOrganizationName as PurchasingOrganizationName,
+  
+  ekgrp as PurchasingGroup,
+  _PurchasingGroup.PurchasingGroupName as PurchasingGroupName,
   
   waers as DocumentCurrency,
   
@@ -50,5 +58,7 @@ define root view entity ZI_PurchasingDocument
   _PurchaseOrderType,
   _PurchaseOrderTypeText,
   _CompanyCode,
-  _Supplier
+  _Supplier,
+  _PurchasingOrganization,
+  _PurchasingGroup
 }

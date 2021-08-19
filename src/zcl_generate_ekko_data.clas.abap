@@ -15,7 +15,7 @@ CLASS zcl_generate_ekko_data IMPLEMENTATION.
     DATA lt_ekko TYPE TABLE OF zdt_ekko.
 
     lt_ekko = VALUE #(
-      ( ebeln = `4500000837` bukrs = `AH02` bstyp = `F` bsart = `ZPPD` lifnr = `0000100026` waers = `USD` bedat = `20201201` )
+      ( ebeln = `4500000837` bukrs = `AH02` bstyp = `F` bsart = `ZPPD` lifnr = `0000100026` ekorg = `AHSF` ekgrp = `PCT` waers = `USD` bedat = `20201201` )
     ).
 
     DELETE FROM zdt_ekko.

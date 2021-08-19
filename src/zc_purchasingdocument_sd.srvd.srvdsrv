@@ -1,10 +1,14 @@
 @EndUserText.label: 'Purchasing Document SD'
 define service ZC_PURCHASINGDOCUMENT_SD {
+  expose ZC_PurchasingDocumentItem;
   expose ZC_PurchasingDocument;
   expose ZC_SupplierValueHelp;
   expose ZI_CompanyCode;
+  expose ZI_PurchasingDocumentItem;
   expose ZI_PurchasingDocument;
   expose ZI_PurchasingDocumentType;
   expose ZI_PurchasingDocumentTypeText;
+  expose ZI_PurchasingOrganization;
+  expose ZI_PurchasingGroup;
   expose ZI_Supplier;
 }
