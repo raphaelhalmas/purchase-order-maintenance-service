@@ -23,7 +23,7 @@ etag master LastChangedAt
 
   field ( readonly ) CreatedBy, CreatedAt, LastChangedBy, LastChangedAt;
 
-  create;
-  update;
-  delete;
+  //create;
+  //update;
+  //delete;
 }
