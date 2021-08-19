@@ -9,7 +9,6 @@ CLASS zcl_generate_t161_data DEFINITION
   PRIVATE SECTION.
 ENDCLASS.
 
-
 CLASS zcl_generate_t161_data IMPLEMENTATION.
 
   METHOD if_oo_adt_classrun~main.

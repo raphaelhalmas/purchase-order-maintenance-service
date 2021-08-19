@@ -25,7 +25,9 @@ define root view entity ZI_PurchasingDocument as select from zdt_ekko
   lifnr as Supplier,
   _Supplier.SupplierName as SupplierName, 
   
-  bedat as PurchasingDocumentOrderDate, 
+  waers as DocumentCurrency,
+  
+  bedat as PurchasingDocumentOrderDate,
     
   @Semantics.user.createdBy: true
   created_by as CreatedBy,
