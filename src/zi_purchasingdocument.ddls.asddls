@@ -1,6 +1,11 @@
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Purchasing Document'
-define root view entity ZI_PurchasingDocument as select from zdt_ekko    
+define root view entity ZI_PurchasingDocument 
+  as select from zdt_ekko
+
+  //association [0..*] to ZI_PurchasingDocumentItem as _PurchasingDocumentItem on $projection.PurchasingDocument = _PurchasingDocumentItem.PurchasingDocument
+  composition[0..*] of ZI_PurchasingDocumentItem as _PurchasingDocumentItem
+
   association [0..1] to ZI_PurchasingDocumentType as _PurchaseOrderType
     on _PurchaseOrderType.PurchasingDocumentCategory = 'F'
    and _PurchaseOrderType.PurchasingDocumentType = $projection.PurchasingDocumentType
@@ -41,6 +46,7 @@ define root view entity ZI_PurchasingDocument as select from zdt_ekko
   @Semantics.systemDateTime.lastChangedAt: true
   last_changed_at as LastChangedAt,
     
+  _PurchasingDocumentItem,
   _PurchaseOrderType,
   _PurchaseOrderTypeText,
   _CompanyCode,

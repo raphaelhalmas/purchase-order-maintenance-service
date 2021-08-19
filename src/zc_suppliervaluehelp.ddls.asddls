@@ -5,11 +5,14 @@
 @ObjectModel.dataCategory: #VALUE_HELP
 @Search.searchable: true
 @EndUserText.label: 'Value Help for ZI_Supplier'
-define view ZC_SupplierValueHelp as select from ZI_Supplier {
+define view ZC_SupplierValueHelp 
+  as select from ZI_Supplier {
+  
   @ObjectModel.text.element:  [ 'SupplierName' ]
   @Search: { defaultSearchElement: true, ranking: #HIGH, fuzzinessThreshold: 0.8 }
   key Supplier,
 
   @Semantics.text: true
-  SupplierName  
+  SupplierName
+    
 }

@@ -3,8 +3,10 @@
 @AbapCatalog.preserveKey: true
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Purchasing Document Item'
-define view ZI_PurchasingDocumentItem as select from zdt_ekpo 
-  association [1..1] to ZI_PurchasingDocument as _PurchasingDocument on $projection.PurchasingDocument = _PurchasingDocument.PurchasingDocument
+define view ZI_PurchasingDocumentItem 
+  as select from zdt_ekpo
+  //association [1..1] to ZI_PurchasingDocument as _PurchasingDocument on $projection.PurchasingDocument = _PurchasingDocument.PurchasingDocument
+  association to parent ZI_PurchasingDocument as _PurchasingDocument on $projection.PurchasingDocument = _PurchasingDocument.PurchasingDocument  
 {
   key ebeln as PurchasingDocument,
   key ebelp as PurchasingDocumentItem,
@@ -25,4 +27,5 @@ define view ZI_PurchasingDocumentItem as select from zdt_ekpo
   _PurchasingDocument.DocumentCurrency,
   
   _PurchasingDocument
+  
 }

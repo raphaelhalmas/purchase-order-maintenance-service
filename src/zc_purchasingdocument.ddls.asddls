@@ -16,6 +16,8 @@ define root view entity ZC_PurchasingDocument
   
   @ObjectModel: { text.element: [ 'CompanyCodeName' ] }
   CompanyCode,
-  CompanyCodeName
+  CompanyCodeName,
+  
+  _PurchasingDocumentItem : redirected to composition child ZC_PurchasingDocumentItem
     
 }
