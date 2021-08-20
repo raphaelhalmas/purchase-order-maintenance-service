@@ -1,0 +1,26 @@
+@Metadata.layer: #CORE
+annotate view ZC_PurchasingDocumentItem with 
+{
+
+  @UI.lineItem: [{ importance: #HIGH, position: 10, label: 'Item'}]
+  PurchasingDocumentItem;
+  
+  @UI.lineItem: [{ importance: #HIGH, position: 20, label: 'Material'}]
+  Material;
+  
+  @UI.lineItem: [{ importance: #HIGH, position: 30, label: 'Short Text'}]
+  PurchasingDocumentItemText;
+  
+  @UI.lineItem: [{ importance: #HIGH, position: 40, label: 'PO Quantity'}]
+  OrderQuantity;
+  
+  @UI.lineItem: [{ importance: #HIGH, position: 50, label: 'Order Unit'}]
+  OrderQuantityUnit;
+  
+  @UI.lineItem: [{ importance: #HIGH, position: 60, label: 'Net Price'}]
+  NetPriceAmount;
+  
+  @UI.lineItem: [{ importance: #HIGH, position: 70, label: 'Currency'}]
+  DocumentCurrency;    
+  
+}

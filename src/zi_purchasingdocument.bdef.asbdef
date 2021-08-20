@@ -28,6 +28,8 @@ etag master LastChangedAt
   //create;
   //update;
   //delete;
+
+  //association _PurchasingDocumentItem { create; }
 }
 
 define behavior for ZI_PurchasingDocumentItem alias PurchasingDocumentItem
