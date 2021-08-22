@@ -16,11 +16,13 @@ define view ZI_PurchasingDocumentItem
   @Semantics.text: true
   txz01 as PurchasingDocumentItemText,
   
+  @Semantics.quantity.unitOfMeasure: 'OrderQuantityUnit'
   menge as OrderQuantity,
   
   @Semantics.unitOfMeasure: true
   meins as OrderQuantityUnit,
   
+  @Semantics.amount.currencyCode: 'DocumentCurrency'
   netpr as NetPriceAmount,
   
   @Semantics.currencyCode: true
