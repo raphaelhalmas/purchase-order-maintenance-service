@@ -10,7 +10,10 @@ CLASS zcl_generate_ekpo_data DEFINITION
   PRIVATE SECTION.
 ENDCLASS.
 
-CLASS zcl_generate_ekpo_data IMPLEMENTATION.
+
+
+CLASS ZCL_GENERATE_EKPO_DATA IMPLEMENTATION.
+
 
   METHOD if_oo_adt_classrun~main.
     DATA lt_ekpo TYPE TABLE OF zdt_ekpo.
@@ -24,5 +27,4 @@ CLASS zcl_generate_ekpo_data IMPLEMENTATION.
 
     out->write( |{ sy-dbcnt } EKPO entries inserted successfully!| ).
   ENDMETHOD.
-
 ENDCLASS.

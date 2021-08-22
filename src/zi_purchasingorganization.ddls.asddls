@@ -10,8 +10,6 @@ define view ZI_PurchasingOrganization
   @EndUserText.label: 'Purchasing Organization'
   key ekorg as PurchasingOrganization,
     
-  @Semantics.text: true
   @EndUserText.label: 'Purchasing Organization'
-  ekotx as PurchasingOrganizationName
-  
+  ekotx as PurchasingOrganizationName  
 }

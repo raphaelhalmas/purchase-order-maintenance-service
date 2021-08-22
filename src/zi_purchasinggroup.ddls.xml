@@ -5,7 +5,7 @@
    <DDLS>
     <DDLNAME>ZI_PURCHASINGGROUP</DDLNAME>
     <DDLANGUAGE>E</DDLANGUAGE>
-    <DDTEXT>Supplier</DDTEXT>
+    <DDTEXT>Purchasing Group</DDTEXT>
     <SOURCE_TYPE>V</SOURCE_TYPE>
    </DDLS>
   </asx:values>

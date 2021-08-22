@@ -3,8 +3,7 @@
 @Metadata.allowExtensions: true
 define view entity ZC_PurchasingDocumentItem
   as projection on ZI_PurchasingDocumentItem   
-{
-  
+{  
   key PurchasingDocument,
   key PurchasingDocumentItem,
 
@@ -16,5 +15,4 @@ define view entity ZC_PurchasingDocumentItem
   DocumentCurrency,
   
   _PurchasingDocument : redirected to parent ZC_PurchasingDocument
-
 }

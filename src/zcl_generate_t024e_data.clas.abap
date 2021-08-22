@@ -9,7 +9,10 @@ CLASS zcl_generate_t024e_data DEFINITION
   PRIVATE SECTION.
 ENDCLASS.
 
-CLASS zcl_generate_t024e_data IMPLEMENTATION.
+
+
+CLASS ZCL_GENERATE_T024E_DATA IMPLEMENTATION.
+
 
   METHOD if_oo_adt_classrun~main.
     DATA lt_t024e TYPE TABLE OF zdt_t024e.
@@ -23,5 +26,4 @@ CLASS zcl_generate_t024e_data IMPLEMENTATION.
 
     out->write( |{ sy-dbcnt } T024E entries inserted successfully!| ).
   ENDMETHOD.
-
 ENDCLASS.

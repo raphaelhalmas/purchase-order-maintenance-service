@@ -9,7 +9,6 @@
 @Search.searchable: true
 annotate view ZC_PurchasingDocument with 
 {
-
   @UI.facet: [{ 
     id:'GeneralInformationCollectionFacet',
     type:#COLLECTION,
@@ -89,5 +88,4 @@ annotate view ZC_PurchasingDocument with
   
   @UI.hidden: true
   PurchasingGroupName;
-  
 }

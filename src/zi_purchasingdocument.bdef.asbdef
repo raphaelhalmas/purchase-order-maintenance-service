@@ -1,4 +1,4 @@
-managed implementation in class zbp_i_purchasingdocument unique;
+managed implementation in class ZBP_I_PurchasingDocument unique;
 //strict;
 
 define behavior for ZI_PurchasingDocument alias PurchasingDocument
@@ -25,11 +25,11 @@ etag master LastChangedAt
 
   field ( readonly ) CreatedBy, CreatedAt, LastChangedBy, LastChangedAt;
 
-  //create;
-  //update;
-  //delete;
+  create;
+  update;
+  delete;
 
-  //association _PurchasingDocumentItem { create; }
+  association _PurchasingDocumentItem { create; }
 }
 
 define behavior for ZI_PurchasingDocumentItem alias PurchasingDocumentItem
@@ -50,9 +50,8 @@ lock dependent by _PurchasingDocument
 
   field( readonly ) PurchasingDocument;
 
-  //create;
-  //update;
-  //delete;
+  update;
+  delete;
 
   association _PurchasingDocument;
 }

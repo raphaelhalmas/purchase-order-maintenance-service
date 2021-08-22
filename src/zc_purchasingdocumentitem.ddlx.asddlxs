@@ -1,7 +1,6 @@
 @Metadata.layer: #CORE
 annotate view ZC_PurchasingDocumentItem with 
 {
-
   @UI.lineItem: [{ importance: #HIGH, position: 10, label: 'Item'}]
   PurchasingDocumentItem;
   
@@ -22,5 +21,4 @@ annotate view ZC_PurchasingDocumentItem with
   
   @UI.lineItem: [{ importance: #HIGH, position: 70, label: 'Currency'}]
   DocumentCurrency;    
-  
 }

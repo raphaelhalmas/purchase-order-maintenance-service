@@ -12,7 +12,5 @@ define view ZC_SupplierValueHelp
   @Search: { defaultSearchElement: true, ranking: #HIGH, fuzzinessThreshold: 0.8 }
   key Supplier,
 
-  @Semantics.text: true
-  SupplierName
-    
+  SupplierName    
 }

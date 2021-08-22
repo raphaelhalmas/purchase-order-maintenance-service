@@ -10,8 +10,6 @@ define view ZI_PurchasingGroup
   @EndUserText.label: 'Purchasing Group'
   key ekgrp as PurchasingGroup,
     
-  @Semantics.text: true
   @EndUserText.label: 'Purchasing Group'
-  eknam as PurchasingGroupName
-  
+  eknam as PurchasingGroupName  
 }

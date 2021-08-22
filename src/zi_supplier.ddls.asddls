@@ -7,11 +7,9 @@ define view ZI_Supplier
   as select from zdt_lfa1 {
   
   @ObjectModel.text.element: ['SupplierName']
-  @EndUserText.label: 'Vendor'
+  @EndUserText.label: 'Supplier'
   key lifnr as Supplier,
     
-  @Semantics.text: true
   @EndUserText.label: 'Name of Supplier'
   name1 as SupplierName
-  
 }

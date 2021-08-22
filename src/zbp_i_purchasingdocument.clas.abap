@@ -1,5 +1,5 @@
-CLASS zbp_i_purchasingdocument DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_purchasingdocument.
+CLASS ZBP_I_PurchasingDocument DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF ZI_PurchasingDocument.
 ENDCLASS.
 
-CLASS zbp_i_purchasingdocument IMPLEMENTATION.
+CLASS ZBP_I_PurchasingDocument IMPLEMENTATION.
 ENDCLASS.

@@ -9,7 +9,10 @@ CLASS zcl_generate_t161_data DEFINITION
   PRIVATE SECTION.
 ENDCLASS.
 
-CLASS zcl_generate_t161_data IMPLEMENTATION.
+
+
+CLASS ZCL_GENERATE_T161_DATA IMPLEMENTATION.
+
 
   METHOD if_oo_adt_classrun~main.
     DATA lt_t161 TYPE TABLE OF zdt_t161.
@@ -23,5 +26,4 @@ CLASS zcl_generate_t161_data IMPLEMENTATION.
 
     out->write( |{ sy-dbcnt } T161 entries inserted successfully!| ).
   ENDMETHOD.
-
 ENDCLASS.

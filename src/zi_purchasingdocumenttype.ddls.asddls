@@ -15,6 +15,5 @@ define view ZI_PurchasingDocumentType
   @ObjectModel.text.association: '_Text'
   key bsart as PurchasingDocumentType,
   
-  _Text
-  
+  _Text  
 }

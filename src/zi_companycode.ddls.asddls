@@ -11,6 +11,5 @@ define view ZI_CompanyCode
   key bukrs as CompanyCode,
   
   @EndUserText.label: 'Company Name'
-  butxt as CompanyCodeName
-  
+  butxt as CompanyCodeName  
 }

@@ -27,5 +27,4 @@ define view ZI_PurchasingDocumentItem
   _PurchasingDocument.DocumentCurrency,
   
   _PurchasingDocument
-  
 }

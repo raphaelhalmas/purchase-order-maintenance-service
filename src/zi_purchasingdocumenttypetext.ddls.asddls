@@ -8,6 +8,5 @@ define view ZI_PurchasingDocumentTypeText
   
   key bsart as PurchasingDocumentType,
   key bstyp as PurchasingDocumentCategory,   
-  batxt as PurchasingDocumentTypeName
-  
+  batxt as PurchasingDocumentTypeName  
 }
