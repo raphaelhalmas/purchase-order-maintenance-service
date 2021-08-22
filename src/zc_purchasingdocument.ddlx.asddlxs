@@ -46,9 +46,7 @@ annotate view ZC_PurchasingDocument with
     purpose: #STANDARD,
     label: 'Items',
     targetElement: '_PurchasingDocumentItem'
-  }
-  
-  ]
+  }]
 
   @UI: {
     lineItem: [ { position: 10, importance: #HIGH, label: 'Purchase Order' } ],

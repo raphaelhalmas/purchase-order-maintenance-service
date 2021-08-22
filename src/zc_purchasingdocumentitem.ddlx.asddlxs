@@ -1,24 +1,46 @@
 @Metadata.layer: #CORE
 annotate view ZC_PurchasingDocumentItem with 
 {
+  @UI.facet: [{ 
+    id:'GeneralInformationCollectionFacet',
+    type:#COLLECTION,
+    label:'General Information',
+    purpose: #STANDARD
+  },
+  
+  { 
+    id:'FieldGroupReferenceFacet1',
+    type:#FIELDGROUP_REFERENCE,
+    parentId: 'GeneralInformationCollectionFacet',
+    purpose: #STANDARD,
+    targetQualifier: 'FieldGroup1'
+  }]
+
   @UI.lineItem: [{ importance: #HIGH, position: 10, label: 'Item'}]
+  @UI.fieldGroup: [{ position: 10, label: 'Item', qualifier: 'FieldGroup1' }]
   PurchasingDocumentItem;
   
   @UI.lineItem: [{ importance: #HIGH, position: 20, label: 'Material'}]
+  @UI.fieldGroup: [{ position: 20, label: 'Material', qualifier: 'FieldGroup1' }]
   Material;
   
   @UI.lineItem: [{ importance: #HIGH, position: 30, label: 'Short Text'}]
+  @UI.fieldGroup: [{ position: 30, label: 'Short Text', qualifier: 'FieldGroup1' }]
   PurchasingDocumentItemText;
   
   @UI.lineItem: [{ importance: #HIGH, position: 40, label: 'PO Quantity'}]
+  @UI.fieldGroup: [{ position: 40, label: 'PO Quantity', qualifier: 'FieldGroup1' }]
   OrderQuantity;
   
   @UI.lineItem: [{ importance: #HIGH, position: 50, label: 'Order Unit'}]
+  @UI.fieldGroup: [{ position: 50, label: 'Order Unit', qualifier: 'FieldGroup1' }]
   OrderQuantityUnit;
   
   @UI.lineItem: [{ importance: #HIGH, position: 60, label: 'Net Price'}]
+  @UI.fieldGroup: [{ position: 60, label: 'Net Price', qualifier: 'FieldGroup1' }]
   NetPriceAmount;
   
   @UI.lineItem: [{ importance: #HIGH, position: 70, label: 'Currency'}]
+  @UI.fieldGroup: [{ position: 70, label: 'Currency', qualifier: 'FieldGroup1' }]
   DocumentCurrency;    
 }
