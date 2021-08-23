@@ -1,23 +1,31 @@
 @Metadata.layer: #CORE
+@Search.searchable: true
 
 @UI.headerInfo: { 
   typeName: 'Purchase Order', 
   typeNamePlural: 'Purchase Orders',
-  title: { type: #STANDARD, value: 'PurchasingDocument' } 
+  
+  title: {
+    type: #STANDARD, value: 'PurchasingDocument' 
+  },
+  
+  description: {
+    type: #STANDARD, value: 'PurchaseOrderTypeName' 
+  }
 }
-
-@Search.searchable: true
 annotate view ZC_PurchasingDocument with 
 {
+  @Search.defaultSearchElement: true
+
   @UI.facet: [{ 
     id:'GeneralInformationCollectionFacet',
     type:#COLLECTION,
-    label:'General Information',
-    purpose: #STANDARD
+    purpose: #STANDARD,
+    label:'General Information'    
   },
   
   { 
-    id:'FieldGroupReferenceFacet1',
+    id:'FieldGroupReferenceFacet1',    
     type:#FIELDGROUP_REFERENCE,
     parentId: 'GeneralInformationCollectionFacet',
     purpose: #STANDARD,
@@ -27,7 +35,7 @@ annotate view ZC_PurchasingDocument with
   { 
     id:'FieldGroupReferenceFacet2',
     type:#FIELDGROUP_REFERENCE,
-    parentId: 'GeneralInformationCollectionFacet',
+    parentId: 'GeneralInformationCollectionFacet',    
     purpose: #STANDARD,
     targetQualifier: 'FieldGroup2'
   },
@@ -35,7 +43,7 @@ annotate view ZC_PurchasingDocument with
   { 
     id:'FieldGroupReferenceFacet3',
     type:#FIELDGROUP_REFERENCE,
-    parentId: 'GeneralInformationCollectionFacet',
+    parentId: 'GeneralInformationCollectionFacet',        
     purpose: #STANDARD,
     targetQualifier: 'FieldGroup3'
   },   
@@ -49,25 +57,26 @@ annotate view ZC_PurchasingDocument with
   }]
 
   @UI: {
-    lineItem: [ { position: 10, importance: #HIGH, label: 'Purchase Order' } ],
-    identification: [ { position: 10, label: 'Purchase Order' } ]
-  }      
-  @Search.defaultSearchElement: true  
+    identification: [ { position: 10, label: 'Purchase Order' } ],
+    lineItem: [ { position: 10, importance: #HIGH, label: 'Purchase Order' } ]
+  } 
   PurchasingDocument;
   
-  @UI.selectionField: [{ position: 20 }]
-  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_Supplier', element: 'Supplier' } }]
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_Supplier', element: 'Supplier' } }]    
   @UI.fieldGroup: [{ position: 10, label: 'Supplier', qualifier: 'FieldGroup1' }]
-  @UI.lineItem: [ { position: 20, importance: #HIGH, label: 'Supplier' } ]  
+  @UI.lineItem: [ { position: 20, importance: #HIGH, label: 'Supplier' } ]
+  @UI.selectionField: [{ position: 20 }]
+  @UI.textArrangement: #TEXT_ONLY  
   Supplier;
   
   @UI.hidden: true
   SupplierName;
   
-  @UI.selectionField: [{ position: 30 }]
   @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_CompanyCode', element: 'CompanyCode' } }]
   @UI.fieldGroup: [{position: 30, label: 'Company Code', qualifier: 'FieldGroup3' }]
   @UI.lineItem: [ { position: 30, importance: #HIGH, label: 'Company Code' } ]
+  @UI.selectionField: [{ position: 30 }]
+  @UI.textArrangement: #TEXT_ONLY
   CompanyCode;
   
   @UI.hidden: true
@@ -75,6 +84,7 @@ annotate view ZC_PurchasingDocument with
   
   @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_PurchasingOrganization', element: 'PurchasingOrganization' } }]
   @UI.fieldGroup: [{position: 10, label: 'Purchasing Organization', qualifier: 'FieldGroup2' }]
+  @UI.textArrangement: #TEXT_ONLY
   PurchasingOrganization;
   
   @UI.hidden: true
@@ -82,6 +92,7 @@ annotate view ZC_PurchasingDocument with
   
   @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_PurchasingGroup', element: 'PurchasingGroup' } }]
   @UI.fieldGroup: [{position: 20, label: 'Purchasing Group', qualifier: 'FieldGroup2' }]
+  @UI.textArrangement: #TEXT_ONLY
   PurchasingGroup;
   
   @UI.hidden: true

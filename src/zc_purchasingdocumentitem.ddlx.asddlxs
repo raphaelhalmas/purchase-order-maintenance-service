@@ -1,38 +1,38 @@
 @Metadata.layer: #CORE
 annotate view ZC_PurchasingDocumentItem with 
 {
-  @UI.facet: [{ 
+  @UI.facet: [{
     id:'GeneralInformationCollectionFacet',
     type:#COLLECTION,
-    label:'General Information',
-    purpose: #STANDARD
+    purpose: #STANDARD,
+    label:'General Information'            
   },
   
   { 
-    id:'FieldGroupReferenceFacet1',
-    type:#FIELDGROUP_REFERENCE,
+    id:'FieldGroupReferenceFacet1',    
     parentId: 'GeneralInformationCollectionFacet',
+    type:#FIELDGROUP_REFERENCE,
     purpose: #STANDARD,
-    targetQualifier: 'FieldGroup1'
+    targetQualifier: 'FieldGroup1'    
   }]
 
-  @UI.lineItem: [{ importance: #HIGH, position: 10, label: 'Item'}]
   @UI.fieldGroup: [{ position: 10, label: 'Item', qualifier: 'FieldGroup1' }]
+  @UI.lineItem: [{ importance: #HIGH, position: 10, label: 'Item'}]  
   PurchasingDocumentItem;
   
-  @UI.lineItem: [{ importance: #HIGH, position: 20, label: 'Material'}]
   @UI.fieldGroup: [{ position: 20, label: 'Material', qualifier: 'FieldGroup1' }]
+  @UI.lineItem: [{ importance: #HIGH, position: 20, label: 'Material'}]  
   Material;
   
-  @UI.lineItem: [{ importance: #HIGH, position: 30, label: 'Short Text'}]
   @UI.fieldGroup: [{ position: 30, label: 'Short Text', qualifier: 'FieldGroup1' }]
+  @UI.lineItem: [{ importance: #HIGH, position: 30, label: 'Short Text'}]  
   PurchasingDocumentItemText;
   
-  @UI.lineItem: [{ importance: #HIGH, position: 40, label: 'PO Quantity'}]
   @UI.fieldGroup: [{ position: 40, label: 'PO Quantity', qualifier: 'FieldGroup1' }]
+  @UI.lineItem: [{ importance: #HIGH, position: 40, label: 'PO Quantity'}]  
   OrderQuantity;
   
-  @UI.lineItem: [{ importance: #HIGH, position: 50, label: 'Net Price'}]
   @UI.fieldGroup: [{ position: 50, label: 'Net Price', qualifier: 'FieldGroup1' }]
+  @UI.lineItem: [{ importance: #HIGH, position: 50, label: 'Net Price'}]  
   NetPriceAmount;
 }

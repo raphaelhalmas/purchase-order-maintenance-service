@@ -5,7 +5,6 @@
 @EndUserText.label: 'Purchasing Document Item'
 define view ZI_PurchasingDocumentItem 
   as select from zdt_ekpo
-  //association [1..1] to ZI_PurchasingDocument as _PurchasingDocument on $projection.PurchasingDocument = _PurchasingDocument.PurchasingDocument
   association to parent ZI_PurchasingDocument as _PurchasingDocument on $projection.PurchasingDocument = _PurchasingDocument.PurchasingDocument  
 {
   key ebeln as PurchasingDocument,
@@ -19,14 +18,12 @@ define view ZI_PurchasingDocumentItem
   @Semantics.quantity.unitOfMeasure: 'OrderQuantityUnit'
   menge as OrderQuantity,
   
-  @Semantics.unitOfMeasure: true
   meins as OrderQuantityUnit,
   
   @Semantics.amount.currencyCode: 'DocumentCurrency'
-  netpr as NetPriceAmount,
+  cast(netpr as abap.dec(13,2)) as NetPriceAmount,
   
-  @Semantics.currencyCode: true
   _PurchasingDocument.DocumentCurrency,
-  
+    
   _PurchasingDocument
 }

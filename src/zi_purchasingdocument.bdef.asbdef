@@ -48,7 +48,8 @@ lock dependent by _PurchasingDocument
     NetPriceAmount = netpr;
   }
 
-  field( readonly ) PurchasingDocument, PurchasingDocumentItem, NetPriceAmount, DocumentCurrency;
+  field( readonly ) PurchasingDocument, PurchasingDocumentItem;
+  field( readonly : update ) DocumentCurrency;
 
   update;
   delete;

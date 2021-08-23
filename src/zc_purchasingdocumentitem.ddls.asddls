@@ -1,6 +1,7 @@
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Purchase Order Item'
 @Metadata.allowExtensions: true
+@ObjectModel.semanticKey: ['PurchasingDocument', 'PurchasingDocumentItem']
 define view entity ZC_PurchasingDocumentItem
   as projection on ZI_PurchasingDocumentItem   
 {  
@@ -8,7 +9,7 @@ define view entity ZC_PurchasingDocumentItem
   key PurchasingDocumentItem,
 
   Material,
-  PurchasingDocumentItemText,
+  PurchasingDocumentItemText,    
   OrderQuantity,
   OrderQuantityUnit,
   NetPriceAmount,
