@@ -6,7 +6,7 @@
     type: #STANDARD, value: 'PurchasingDocument' 
   },
 
-  typeName: 'Purchase Order', 
+  typeName: 'Display Purchase Order', 
   typeNamePlural: 'Purchase Orders'
 }
 annotate view ZC_PurchasingDocument with 
@@ -54,53 +54,44 @@ annotate view ZC_PurchasingDocument with
   
   @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_PurchasingDocumentType', element: 'PurchasingDocumentType' } }]
   @UI.fieldGroup: [{ position: 10, label: 'Order Type', qualifier: 'FieldGroup1' }]
+  @UI.identification: [{ position: 10 }]
   PurchasingDocumentType;
-  
-  @UI.hidden: true
-  PurchasingDocumentTypeName;  
   
   @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_Supplier', element: 'Supplier' } }]    
   @UI.fieldGroup: [{ position: 20, label: 'Supplier', qualifier: 'FieldGroup1' }]
+  @UI.identification: [{ position: 20 }]  
   @UI.lineItem: [ { position: 20, importance: #HIGH, label: 'Supplier' } ]
   @UI.selectionField: [{ position: 20 }]
-  @UI.textArrangement: #TEXT_ONLY  
-  Supplier;
-  
-  @UI.hidden: true
-  SupplierName;
-  
+  @UI.textArrangement: #TEXT_FIRST
+  Supplier;  
+ 
   @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_CompanyCode', element: 'CompanyCode' } }]
   @UI.fieldGroup: [{ position: 10, label: 'Company Code', qualifier: 'FieldGroup2' }]
+  @UI.identification: [{ position: 50 }]
   @UI.lineItem: [ { position: 30, importance: #HIGH, label: 'Company Code' } ]
   @UI.selectionField: [{ position: 30 }]
-  @UI.textArrangement: #TEXT_ONLY
+  @UI.textArrangement: #TEXT_FIRST
   CompanyCode;
-  
-  @UI.hidden: true
-  CompanyCodeName;
-  
+ 
   @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_PurchasingOrganization', element: 'PurchasingOrganization' } }]
   @UI.fieldGroup: [{ position: 20, label: 'Purchasing Organization', qualifier: 'FieldGroup2' }]
-  @UI.textArrangement: #TEXT_ONLY
+  @UI.identification: [{ position: 60 }]
+  @UI.textArrangement: #TEXT_FIRST
   PurchasingOrganization;
-  
-  @UI.hidden: true
-  PurchasingOrganizationName;  
   
   @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_PurchasingGroup', element: 'PurchasingGroup' } }]
   @UI.fieldGroup: [{ position: 30, label: 'Purchasing Group', qualifier: 'FieldGroup2' }]
-  @UI.textArrangement: #TEXT_ONLY
+  @UI.identification: [{ position: 70 }]
+  @UI.textArrangement: #TEXT_FIRST
   PurchasingGroup;
-  
-  @UI.hidden: true
-  PurchasingGroupName;
   
   @Consumption.valueHelpDefinition: [{ entity: { name:'I_Currency', element: 'Currency' } }]
   @UI.fieldGroup: [{ position: 40, label: 'Currency', qualifier: 'FieldGroup1' }]
-  @UI.textArrangement: #TEXT_ONLY
+  @UI.identification: [{ position: 40 }]
   DocumentCurrency;
 
   @UI.fieldGroup: [{ position: 30, label: 'Doc. Date', qualifier: 'FieldGroup1' }]
-  PurchasingDocumentOrderDate;
-  
+  @UI.identification: [{ position: 30 }]
+  @UI.lineItem: [ { position: 40, importance: #HIGH, label: 'Doc. Date' } ]  
+  PurchasingDocumentOrderDate;  
 }

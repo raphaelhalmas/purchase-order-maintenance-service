@@ -26,6 +26,9 @@ etag master LastChangedAt
 
   field ( readonly ) CreatedBy, CreatedAt, LastChangedBy, LastChangedAt;
 
+  field ( mandatory ) PurchasingDocumentType, Supplier, PurchasingDocumentOrderDate,
+    DocumentCurrency, CompanyCode, PurchasingOrganization, PurchasingGroup;
+
   create;
   update;
   delete;
@@ -50,6 +53,7 @@ lock dependent by _PurchasingDocument
   }
 
   field( readonly ) PurchasingDocument, PurchasingDocumentItem, DocumentCurrency;
+  field( mandatory ) OrderQuantity, NetPriceAmount;
 
   update;
   delete;

@@ -1,22 +1,29 @@
 @Metadata.layer: #CORE
+
+@UI.headerInfo: {
+  title: {
+    type: #STANDARD, value: 'PurchasingDocumentItem' 
+  },
+
+  typeName: 'Display Purchase Order Item'
+}
 annotate view ZC_PurchasingDocumentItem with 
 {
-  @UI.facet: [{
+  @UI.facet: [
+  {
     id:'GeneralInformationCollectionFacet',
     type:#COLLECTION,
     purpose: #STANDARD,
-    label:'General Information'            
-  },
-  
-  { 
+    label:'Item Details'            
+  },  
+  {
     id:'FieldGroupReferenceFacet1',    
     parentId: 'GeneralInformationCollectionFacet',
     type:#FIELDGROUP_REFERENCE,
     purpose: #STANDARD,
     targetQualifier: 'FieldGroup1'    
   }]
-
-  @UI.fieldGroup: [{ position: 10, label: 'Item', qualifier: 'FieldGroup1' }]
+  
   @UI.lineItem: [{ importance: #HIGH, position: 10, label: 'Item'}]  
   PurchasingDocumentItem;
   

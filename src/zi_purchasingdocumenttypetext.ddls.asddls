@@ -6,7 +6,12 @@
 define view ZI_PurchasingDocumentTypeText 
   as select from zdt_t161t {
   
+  @Consumption.filter.hidden: true
   key bsart as PurchasingDocumentType,
-  key bstyp as PurchasingDocumentCategory,   
+  
+  @Consumption.filter.hidden: true
+  key bstyp as PurchasingDocumentCategory,
+  
+  @EndUserText.label: 'Order Type Description'
   batxt as PurchasingDocumentTypeName  
 }

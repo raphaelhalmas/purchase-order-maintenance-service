@@ -12,7 +12,7 @@ define root view entity ZC_PurchasingDocument
   PurchasingDocumentTypeName,
   
   @ObjectModel: { text.element: [ 'SupplierName' ] }
-  Supplier,  
+  Supplier,
   SupplierName,
   
   @ObjectModel: { text.element: [ 'CompanyCodeName' ] }
@@ -29,6 +29,8 @@ define root view entity ZC_PurchasingDocument
   
   DocumentCurrency,  
   PurchasingDocumentOrderDate,
+  
+  _Supplier,
   
   _PurchasingDocumentItem : redirected to composition child ZC_PurchasingDocumentItem   
 }
