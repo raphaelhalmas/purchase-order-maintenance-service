@@ -5,9 +5,11 @@ define root view entity ZC_PurchasingDocument
   provider contract transactional_query
   as projection on ZI_PurchasingDocument   
 {  
-  @ObjectModel: { text.element: [ 'PurchaseOrderTypeName' ] }
   key PurchasingDocument,
-  PurchaseOrderTypeName,
+  
+  @ObjectModel: { text.element: [ 'PurchasingDocumentTypeName' ] }
+  PurchasingDocumentType,
+  PurchasingDocumentTypeName,
   
   @ObjectModel: { text.element: [ 'SupplierName' ] }
   Supplier,  
@@ -21,9 +23,12 @@ define root view entity ZC_PurchasingDocument
   PurchasingGroup,
   PurchasingGroupName,  
   
-  @ObjectModel: { text.element: [ 'PurchasingOrganization' ] }
+  @ObjectModel: { text.element: [ 'PurchasingOrganizationName' ] }
   PurchasingOrganization,
   PurchasingOrganizationName,
+  
+  DocumentCurrency,  
+  PurchasingDocumentOrderDate,
   
   _PurchasingDocumentItem : redirected to composition child ZC_PurchasingDocumentItem   
 }

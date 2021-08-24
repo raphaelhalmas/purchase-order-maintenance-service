@@ -1,13 +1,14 @@
-@AbapCatalog.sqlViewName: 'ZIMMPURGORG'
 @AbapCatalog.compiler.compareFilter: true
 @AbapCatalog.preserveKey: true
+@AbapCatalog.sqlViewName: 'ZIMMPURGORG'
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Purchasing Organization'
+@ObjectModel.resultSet.sizeCategory: #XS -- drop down menu for value help
 define view ZI_PurchasingOrganization 
   as select from zdt_t024e {
-  
-  @ObjectModel.text.element: ['PurchasingOrganizationName']
+    
   @EndUserText.label: 'Purchasing Organization'
+  @ObjectModel.text.element: ['PurchasingOrganizationName']
   key ekorg as PurchasingOrganization,
     
   @EndUserText.label: 'Purchasing Organization'

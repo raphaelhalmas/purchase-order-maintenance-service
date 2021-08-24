@@ -16,6 +16,7 @@ etag master LastChangedAt
     Supplier = lifnr;
     PurchasingOrganization = ekorg;
     PurchasingGroup = ekgrp;
+    DocumentCurrency = waers;
     PurchasingDocumentOrderDate = bedat;
     CreatedBy = created_by;
     CreatedAt = created_at;
@@ -48,8 +49,7 @@ lock dependent by _PurchasingDocument
     NetPriceAmount = netpr;
   }
 
-  field( readonly ) PurchasingDocument, PurchasingDocumentItem;
-  field( readonly : update ) DocumentCurrency;
+  field( readonly ) PurchasingDocument, PurchasingDocumentItem, DocumentCurrency;
 
   update;
   delete;

@@ -3,7 +3,6 @@
 define root view entity ZI_PurchasingDocument 
   as select from zdt_ekko
 
-  //association [0..*] to ZI_PurchasingDocumentItem as _PurchasingDocumentItem on $projection.PurchasingDocument = _PurchasingDocumentItem.PurchasingDocument
   composition[0..*] of ZI_PurchasingDocumentItem as _PurchasingDocumentItem
 
   association [0..1] to ZI_PurchasingDocumentType as _PurchaseOrderType
@@ -27,7 +26,7 @@ define root view entity ZI_PurchasingDocument
   bstyp as PurchasingDocumentCategory,
     
   bsart as PurchasingDocumentType,
-  _PurchaseOrderTypeText.PurchasingDocumentTypeName as PurchaseOrderTypeName,
+  _PurchaseOrderTypeText.PurchasingDocumentTypeName as PurchasingDocumentTypeName,
     
   lifnr as Supplier,
   _Supplier.SupplierName as SupplierName, 

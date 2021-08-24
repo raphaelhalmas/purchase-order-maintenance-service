@@ -1,17 +1,13 @@
 @Metadata.layer: #CORE
 @Search.searchable: true
 
-@UI.headerInfo: { 
-  typeName: 'Purchase Order', 
-  typeNamePlural: 'Purchase Orders',
-  
+@UI.headerInfo: {
   title: {
     type: #STANDARD, value: 'PurchasingDocument' 
   },
-  
-  description: {
-    type: #STANDARD, value: 'PurchaseOrderTypeName' 
-  }
+
+  typeName: 'Purchase Order', 
+  typeNamePlural: 'Purchase Orders'
 }
 annotate view ZC_PurchasingDocument with 
 {
@@ -19,51 +15,52 @@ annotate view ZC_PurchasingDocument with
 
   @UI.facet: [{ 
     id:'GeneralInformationCollectionFacet',
-    type:#COLLECTION,
+    label:'General Information',    
     purpose: #STANDARD,
-    label:'General Information'    
+    type:#COLLECTION    
   },
   
   { 
     id:'FieldGroupReferenceFacet1',    
-    type:#FIELDGROUP_REFERENCE,
+    label: 'General Data',    
     parentId: 'GeneralInformationCollectionFacet',
-    purpose: #STANDARD,
-    targetQualifier: 'FieldGroup1'
+    purpose: #STANDARD,    
+    targetQualifier: 'FieldGroup1',
+    type:#FIELDGROUP_REFERENCE
   },
   
   { 
     id:'FieldGroupReferenceFacet2',
-    type:#FIELDGROUP_REFERENCE,
+    label: 'Organizational Data',    
     parentId: 'GeneralInformationCollectionFacet',    
-    purpose: #STANDARD,
-    targetQualifier: 'FieldGroup2'
+    purpose: #STANDARD,    
+    targetQualifier: 'FieldGroup2',
+    type:#FIELDGROUP_REFERENCE
   },
-   
-  { 
-    id:'FieldGroupReferenceFacet3',
-    type:#FIELDGROUP_REFERENCE,
-    parentId: 'GeneralInformationCollectionFacet',        
-    purpose: #STANDARD,
-    targetQualifier: 'FieldGroup3'
-  },   
-   
+  
   {
     id:'ItemsLineItemReferenceFacet',
-    type: #LINEITEM_REFERENCE,
-    purpose: #STANDARD,
     label: 'Items',
-    targetElement: '_PurchasingDocumentItem'
+    purpose: #STANDARD,
+    targetElement: '_PurchasingDocumentItem',
+    type: #LINEITEM_REFERENCE
   }]
 
   @UI: {
     identification: [ { position: 10, label: 'Purchase Order' } ],
     lineItem: [ { position: 10, importance: #HIGH, label: 'Purchase Order' } ]
-  } 
+  }
   PurchasingDocument;
   
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_PurchasingDocumentType', element: 'PurchasingDocumentType' } }]
+  @UI.fieldGroup: [{ position: 10, label: 'Order Type', qualifier: 'FieldGroup1' }]
+  PurchasingDocumentType;
+  
+  @UI.hidden: true
+  PurchasingDocumentTypeName;  
+  
   @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_Supplier', element: 'Supplier' } }]    
-  @UI.fieldGroup: [{ position: 10, label: 'Supplier', qualifier: 'FieldGroup1' }]
+  @UI.fieldGroup: [{ position: 20, label: 'Supplier', qualifier: 'FieldGroup1' }]
   @UI.lineItem: [ { position: 20, importance: #HIGH, label: 'Supplier' } ]
   @UI.selectionField: [{ position: 20 }]
   @UI.textArrangement: #TEXT_ONLY  
@@ -73,7 +70,7 @@ annotate view ZC_PurchasingDocument with
   SupplierName;
   
   @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_CompanyCode', element: 'CompanyCode' } }]
-  @UI.fieldGroup: [{position: 30, label: 'Company Code', qualifier: 'FieldGroup3' }]
+  @UI.fieldGroup: [{ position: 10, label: 'Company Code', qualifier: 'FieldGroup2' }]
   @UI.lineItem: [ { position: 30, importance: #HIGH, label: 'Company Code' } ]
   @UI.selectionField: [{ position: 30 }]
   @UI.textArrangement: #TEXT_ONLY
@@ -83,7 +80,7 @@ annotate view ZC_PurchasingDocument with
   CompanyCodeName;
   
   @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_PurchasingOrganization', element: 'PurchasingOrganization' } }]
-  @UI.fieldGroup: [{position: 10, label: 'Purchasing Organization', qualifier: 'FieldGroup2' }]
+  @UI.fieldGroup: [{ position: 20, label: 'Purchasing Organization', qualifier: 'FieldGroup2' }]
   @UI.textArrangement: #TEXT_ONLY
   PurchasingOrganization;
   
@@ -91,10 +88,19 @@ annotate view ZC_PurchasingDocument with
   PurchasingOrganizationName;  
   
   @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_PurchasingGroup', element: 'PurchasingGroup' } }]
-  @UI.fieldGroup: [{position: 20, label: 'Purchasing Group', qualifier: 'FieldGroup2' }]
+  @UI.fieldGroup: [{ position: 30, label: 'Purchasing Group', qualifier: 'FieldGroup2' }]
   @UI.textArrangement: #TEXT_ONLY
   PurchasingGroup;
   
   @UI.hidden: true
   PurchasingGroupName;
+  
+  @Consumption.valueHelpDefinition: [{ entity: { name:'I_Currency', element: 'Currency' } }]
+  @UI.fieldGroup: [{ position: 40, label: 'Currency', qualifier: 'FieldGroup1' }]
+  @UI.textArrangement: #TEXT_ONLY
+  DocumentCurrency;
+
+  @UI.fieldGroup: [{ position: 30, label: 'Doc. Date', qualifier: 'FieldGroup1' }]
+  PurchasingDocumentOrderDate;
+  
 }

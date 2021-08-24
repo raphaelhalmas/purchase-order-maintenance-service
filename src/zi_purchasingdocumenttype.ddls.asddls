@@ -3,6 +3,7 @@
 @AbapCatalog.preserveKey: true
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Purchasing Document Type'
+@ObjectModel.resultSet.sizeCategory: #XS -- drop down menu for value help
 define view ZI_PurchasingDocumentType 
   as select from zdt_t161
    
@@ -12,8 +13,11 @@ define view ZI_PurchasingDocumentType
 {
   key bstyp as PurchasingDocumentCategory,
   
-  @ObjectModel.text.association: '_Text'
+  @EndUserText.label: 'Order Type'
+  @ObjectModel.text.element: ['PurchasingDocumentTypeName']
   key bsart as PurchasingDocumentType,
+  
+  _Text.PurchasingDocumentTypeName as PurchasingDocumentTypeName,
   
   _Text  
 }
