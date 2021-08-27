@@ -24,6 +24,12 @@ annotate view ZC_PurchasingDocumentItem with
     targetQualifier: 'FieldGroup1'    
   }]
   
+  @UI.hidden: true
+  PurchasingDocumentItemId;
+  
+  @UI.hidden: true
+  PurchasingDocumentId;
+  
   @UI.lineItem: [{ importance: #HIGH, position: 10, label: 'Item'}]  
   PurchasingDocumentItem;
   

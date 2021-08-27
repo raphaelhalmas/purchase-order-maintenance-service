@@ -3,12 +3,18 @@
 @AbapCatalog.preserveKey: true
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Purchasing Document Item'
+//@ObjectModel.representativeKey: 'PurchasingDocumentItem'
+//@ObjectModel.semanticKey: ['PurchasingDocument', 'PurchasingDocumentItem']
 define view ZI_PurchasingDocumentItem 
   as select from zdt_ekpo
-  association to parent ZI_PurchasingDocument as _PurchasingDocument on $projection.PurchasingDocument = _PurchasingDocument.PurchasingDocument  
+  association to parent ZI_PurchasingDocument as _PurchasingDocument 
+  on $projection.PurchasingDocumentId = _PurchasingDocument.PurchasingDocumentId 
 {
-  key ebeln as PurchasingDocument,
-  key ebelp as PurchasingDocumentItem,
+  key purg_doc_item_id as PurchasingDocumentItemId,
+  purg_doc_id as PurchasingDocumentId, 
+
+  ebeln as PurchasingDocument,
+  ebelp as PurchasingDocumentItem,
   
   matnr as Material,
   

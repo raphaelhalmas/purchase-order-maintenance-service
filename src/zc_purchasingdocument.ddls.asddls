@@ -5,7 +5,9 @@ define root view entity ZC_PurchasingDocument
   provider contract transactional_query
   as projection on ZI_PurchasingDocument   
 {  
-  key PurchasingDocument,
+  key PurchasingDocumentId,
+  
+  PurchasingDocument,
   
   @ObjectModel: { text.element: [ 'PurchasingDocumentTypeName' ] }
   PurchasingDocumentType,

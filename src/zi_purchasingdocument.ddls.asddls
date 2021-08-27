@@ -17,8 +17,9 @@ define root view entity ZI_PurchasingDocument
   association [0..1] to ZI_Supplier as _Supplier on $projection.Supplier = _Supplier.Supplier
   association [0..1] to ZI_PurchasingOrganization as _PurchasingOrganization on $projection.PurchasingOrganization = _PurchasingOrganization.PurchasingOrganization
   association [0..1] to ZI_PurchasingGroup as _PurchasingGroup on $projection.PurchasingGroup = _PurchasingGroup.PurchasingGroup
-{
-  key ebeln as PurchasingDocument,
+{  
+  key purg_doc_id as PurchasingDocumentId,
+  ebeln as PurchasingDocument,
   
   bukrs as CompanyCode,
   _CompanyCode.CompanyCodeName as CompanyCodeName,

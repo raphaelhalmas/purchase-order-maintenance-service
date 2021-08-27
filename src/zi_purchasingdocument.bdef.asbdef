@@ -9,6 +9,7 @@ etag master LastChangedAt
 {
   mapping for zdt_ekko
   {
+    PurchasingDocumentId = purg_doc_id;
     PurchasingDocument = ebeln;
     CompanyCode = bukrs;
     PurchasingDocumentCategory = bstyp;
@@ -24,14 +25,18 @@ etag master LastChangedAt
     LastChangedAt = last_changed_at;
   }
 
+  field ( readonly, numbering : managed ) PurchasingDocumentId;
+
   field ( readonly ) CreatedBy, CreatedAt, LastChangedBy, LastChangedAt;
 
-  field ( mandatory ) PurchasingDocumentType, Supplier, PurchasingDocumentOrderDate,
-    DocumentCurrency, CompanyCode, PurchasingOrganization, PurchasingGroup;
+  //field ( mandatory ) PurchasingDocumentType, Supplier, PurchasingDocumentOrderDate,
+  //DocumentCurrency, CompanyCode, PurchasingOrganization, PurchasingGroup;
 
   create;
   update;
   delete;
+
+  determination setPurchasingDocument on save { create; }
 
   association _PurchasingDocumentItem { create; }
 }
@@ -43,6 +48,8 @@ lock dependent by _PurchasingDocument
 {
   mapping for zdt_ekpo
   {
+    PurchasingDocumentItemId = purg_doc_item_id;
+    PurchasingDocumentId = purg_doc_id;
     PurchasingDocument = ebeln;
     PurchasingDocumentItem = ebelp;
     Material = matnr;
@@ -52,11 +59,16 @@ lock dependent by _PurchasingDocument
     NetPriceAmount = netpr;
   }
 
-  field( readonly ) PurchasingDocument, PurchasingDocumentItem, DocumentCurrency;
-  field( mandatory ) OrderQuantity, NetPriceAmount;
+  field ( readonly, numbering : managed ) PurchasingDocumentItemId;
+
+  field( readonly ) PurchasingDocumentId, PurchasingDocument, PurchasingDocumentItem, DocumentCurrency;
+
+  //field( mandatory ) OrderQuantity, NetPriceAmount;
 
   update;
   delete;
+
+  determination setPurchasingDocumentItem on save { create; }
 
   association _PurchasingDocument;
 }
