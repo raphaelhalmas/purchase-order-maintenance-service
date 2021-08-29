@@ -7,6 +7,8 @@
 
   typeName: 'Display Purchase Order Item'
 }
+
+@UI.presentationVariant: [{ sortOrder: [{ by: 'PurchasingDocumentItem', direction:  #ASC }] }]
 annotate view ZC_PurchasingDocumentItem with 
 {
   @UI.facet: [
@@ -50,5 +52,5 @@ annotate view ZC_PurchasingDocumentItem with
   
   @UI.fieldGroup: [{ position: 50, label: 'Net Price', qualifier: 'FieldGroup1' }]
   @UI.lineItem: [{ importance: #HIGH, position: 50, label: 'Net Price'}]  
-  NetPriceAmount;
+  NetPriceAmount;  
 }

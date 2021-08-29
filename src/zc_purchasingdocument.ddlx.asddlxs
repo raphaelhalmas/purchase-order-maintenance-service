@@ -9,7 +9,9 @@
   typeName: 'Display Purchase Order', 
   typeNamePlural: 'Purchase Orders'
 }
-annotate view ZC_PurchasingDocument with 
+
+@UI.presentationVariant: [{ sortOrder: [{ by: 'PurchasingDocument', direction:  #ASC }] }]
+annotate view ZC_PurchasingDocument with
 {
   @Search.defaultSearchElement: true
 
