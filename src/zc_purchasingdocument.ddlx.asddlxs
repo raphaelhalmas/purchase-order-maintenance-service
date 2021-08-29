@@ -13,8 +13,6 @@
 @UI.presentationVariant: [{ sortOrder: [{ by: 'PurchasingDocument', direction:  #ASC }] }]
 annotate view ZC_PurchasingDocument with
 {
-  @Search.defaultSearchElement: true
-
   @UI.facet: [{ 
     id:'GeneralInformationCollectionFacet',
     label:'General Information',    
@@ -51,9 +49,8 @@ annotate view ZC_PurchasingDocument with
   @UI.hidden: true
   PurchasingDocumentId;
 
-  @UI: {
-    lineItem: [ { position: 10, importance: #HIGH, label: 'Purchase Order' } ]
-  }
+  @Search.defaultSearchElement: true
+  @UI.lineItem: [{ position: 10, importance: #HIGH, label: 'Purchase Order' }]
   PurchasingDocument;
   
   @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_PurchasingDocumentType', element: 'PurchasingDocumentType' } }]
@@ -61,16 +58,16 @@ annotate view ZC_PurchasingDocument with
   PurchasingDocumentType;
   
   @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_Supplier', element: 'Supplier' } }]    
-  @UI.fieldGroup: [{ position: 20, label: 'Supplier', qualifier: 'FieldGroup1' }]  
-  @UI.lineItem: [ { position: 20, importance: #HIGH, label: 'Supplier' } ]
+  @UI.fieldGroup: [{ position: 20, label: 'Supplier', qualifier: 'FieldGroup1' }]
+  @UI.lineItem: [{ position: 20, importance: #HIGH, label: 'Supplier' }]
   @UI.selectionField: [{ position: 20 }]
   @UI.textArrangement: #TEXT_FIRST
   Supplier;  
  
   @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_CompanyCode', element: 'CompanyCode' } }]
   @UI.fieldGroup: [{ position: 10, label: 'Company Code', qualifier: 'FieldGroup2' }]
-  @UI.lineItem: [ { position: 30, importance: #HIGH, label: 'Company Code' } ]
-  @UI.selectionField: [{ position: 30 }]
+  @UI.lineItem: [{ position: 30, importance: #HIGH, label: 'Company Code' }]
+  @UI.selectionField: [{ position: 40 }]
   @UI.textArrangement: #TEXT_FIRST
   CompanyCode;
  
@@ -81,6 +78,7 @@ annotate view ZC_PurchasingDocument with
   
   @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_PurchasingGroup', element: 'PurchasingGroup' } }]
   @UI.fieldGroup: [{ position: 30, label: 'Purchasing Group', qualifier: 'FieldGroup2' }]
+  @UI.selectionField: [{ position: 30 }]
   @UI.textArrangement: #TEXT_FIRST
   PurchasingGroup;
   

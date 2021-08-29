@@ -1,18 +1,18 @@
-CLASS zcl_generate_t024e_data DEFINITION
+CLASS ZCL_Generate_T024E_Data DEFINITION
   PUBLIC
   FINAL
-  CREATE PUBLIC .
+  CREATE PUBLIC.
 
   PUBLIC SECTION.
     INTERFACES if_oo_adt_classrun.
+
   PROTECTED SECTION.
+
   PRIVATE SECTION.
+
 ENDCLASS.
 
-
-
-CLASS ZCL_GENERATE_T024E_DATA IMPLEMENTATION.
-
+CLASS ZCL_Generate_T024E_Data IMPLEMENTATION.
 
   METHOD if_oo_adt_classrun~main.
     DATA lt_t024e TYPE TABLE OF zdt_t024e.
@@ -26,4 +26,5 @@ CLASS ZCL_GENERATE_T024E_DATA IMPLEMENTATION.
 
     out->write( |{ sy-dbcnt } T024E entries inserted successfully!| ).
   ENDMETHOD.
+
 ENDCLASS.

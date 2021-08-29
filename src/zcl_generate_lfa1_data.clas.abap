@@ -1,18 +1,18 @@
-CLASS zcl_generate_lfa1_data DEFINITION
+CLASS ZCL_Generate_LFA1_Data DEFINITION
   PUBLIC
   FINAL
-  CREATE PUBLIC .
+  CREATE PUBLIC.
 
   PUBLIC SECTION.
     INTERFACES if_oo_adt_classrun.
+
   PROTECTED SECTION.
+
   PRIVATE SECTION.
+
 ENDCLASS.
 
-
-
-CLASS ZCL_GENERATE_LFA1_DATA IMPLEMENTATION.
-
+CLASS ZCL_Generate_LFA1_Data IMPLEMENTATION.
 
   METHOD if_oo_adt_classrun~main.
     DATA lt_lfa1 TYPE TABLE OF zdt_lfa1.
@@ -26,4 +26,5 @@ CLASS ZCL_GENERATE_LFA1_DATA IMPLEMENTATION.
 
     out->write( |{ sy-dbcnt } LFA1 entries inserted successfully!| ).
   ENDMETHOD.
+
 ENDCLASS.

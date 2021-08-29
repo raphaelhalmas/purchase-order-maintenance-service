@@ -1,19 +1,18 @@
-CLASS zcl_generate_ekpo_data DEFINITION
+CLASS ZCL_Generate_EKPO_Data DEFINITION
   PUBLIC
   FINAL
-  CREATE PUBLIC .
+  CREATE PUBLIC.
 
   PUBLIC SECTION.
     INTERFACES if_oo_adt_classrun.
 
   PROTECTED SECTION.
+
   PRIVATE SECTION.
+
 ENDCLASS.
 
-
-
-CLASS ZCL_GENERATE_EKPO_DATA IMPLEMENTATION.
-
+CLASS ZCL_Generate_EKPO_Data IMPLEMENTATION.
 
   METHOD if_oo_adt_classrun~main.
     DATA lt_ekpo TYPE TABLE OF zdt_ekpo.
@@ -27,4 +26,5 @@ CLASS ZCL_GENERATE_EKPO_DATA IMPLEMENTATION.
 
     out->write( |{ sy-dbcnt } EKPO entries inserted successfully!| ).
   ENDMETHOD.
+
 ENDCLASS.

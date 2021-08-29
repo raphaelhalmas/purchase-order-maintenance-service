@@ -1,18 +1,18 @@
-CLASS zcl_generate_ekko_data DEFINITION
+CLASS ZCL_Generate_EKKO_Data DEFINITION
   PUBLIC
   FINAL
-  CREATE PUBLIC .
+  CREATE PUBLIC.
 
   PUBLIC SECTION.
     INTERFACES if_oo_adt_classrun.
+
   PROTECTED SECTION.
+
   PRIVATE SECTION.
+
 ENDCLASS.
 
-
-
-CLASS ZCL_GENERATE_EKKO_DATA IMPLEMENTATION.
-
+CLASS ZCL_Generate_EKKO_Data IMPLEMENTATION.
 
   METHOD if_oo_adt_classrun~main.
     DATA lt_ekko TYPE TABLE OF zdt_ekko.
@@ -26,4 +26,5 @@ CLASS ZCL_GENERATE_EKKO_DATA IMPLEMENTATION.
 
     out->write( |{ sy-dbcnt } EKKO entries inserted successfully!| ).
   ENDMETHOD.
+
 ENDCLASS.
