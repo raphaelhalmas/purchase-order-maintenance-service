@@ -27,7 +27,7 @@ etag master LastChangedAt
 
   field ( readonly, numbering : managed ) PurchasingDocumentId;
 
-  field ( readonly ) CreatedBy, CreatedAt, LastChangedBy, LastChangedAt;
+  field ( readonly ) DocumentCurrency, CreatedBy, CreatedAt, LastChangedBy, LastChangedAt;
 
   //field ( mandatory ) PurchasingDocumentType, Supplier, PurchasingDocumentOrderDate,
   //DocumentCurrency, CompanyCode, PurchasingOrganization, PurchasingGroup;
@@ -37,6 +37,7 @@ etag master LastChangedAt
   delete;
 
   determination setPurchasingDocument on save { create; }
+  determination setDocumentCurrency on save { create; }
 
   association _PurchasingDocumentItem { create; }
 }

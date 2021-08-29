@@ -6,6 +6,8 @@ CLASS LHC_PurchasingDocument DEFINITION INHERITING FROM cl_abap_behavior_handler
 
     METHODS setPurchasingDocumentItem FOR DETERMINE ON SAVE
       IMPORTING keys FOR PurchasingDocumentItem~setPurchasingDocumentItem.
+    METHODS setDocumentCurrency FOR DETERMINE ON SAVE
+      IMPORTING keys FOR PurchasingDocument~setDocumentCurrency.
 
 ENDCLASS.
 
@@ -92,6 +94,23 @@ CLASS LHC_PurchasingDocument IMPLEMENTATION.
       REPORTED DATA(reported_data).
 
     reported = CORRESPONDING #( DEEP reported_data ).
+  ENDMETHOD.
+
+  METHOD setDocumentCurrency.
+    READ ENTITIES OF ZI_PurchasingDocument IN LOCAL MODE
+      ENTITY PurchasingDocument
+        FIELDS ( DocumentCurrency )
+        WITH CORRESPONDING #( keys )
+        RESULT DATA(purchasing_documents).
+
+    MODIFY ENTITIES OF ZI_PurchasingDocument IN LOCAL MODE
+      ENTITY PurchasingDocument
+        UPDATE FIELDS ( DocumentCurrency )
+        WITH VALUE #( FOR purchasing_document IN purchasing_documents (
+          %key = purchasing_document-%key
+          DocumentCurrency = 'USD' )
+        )
+        REPORTED DATA(reported_data).
   ENDMETHOD.
 
 ENDCLASS.
