@@ -1,0 +1,10 @@
+@EndUserText.label : 'Purchasing Groups'
+@AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
+@AbapCatalog.tableCategory : #TRANSPARENT
+@AbapCatalog.deliveryClass : #A
+@AbapCatalog.dataMaintenance : #RESTRICTED
+define table zdt_t024 {
+  key ekgrp : abap.char(3) not null;
+  eknam     : abap.char(18);
+
+}

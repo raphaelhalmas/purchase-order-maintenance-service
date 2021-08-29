@@ -1,0 +1,10 @@
+@EndUserText.label : 'Company Codes'
+@AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
+@AbapCatalog.tableCategory : #TRANSPARENT
+@AbapCatalog.deliveryClass : #A
+@AbapCatalog.dataMaintenance : #RESTRICTED
+define table zdt_t001 {
+  key bukrs : bukrs not null;
+  butxt     : abap.char(25);
+
+}

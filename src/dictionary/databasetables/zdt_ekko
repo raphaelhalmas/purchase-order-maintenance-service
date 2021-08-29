@@ -1,0 +1,22 @@
+@EndUserText.label : 'Purchasing Document Header'
+@AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
+@AbapCatalog.tableCategory : #TRANSPARENT
+@AbapCatalog.deliveryClass : #A
+@AbapCatalog.dataMaintenance : #RESTRICTED
+define table zdt_ekko {
+  key purg_doc_id : sysuuid_x16 not null;
+  ebeln           : ebeln not null;
+  bukrs           : bukrs;
+  bstyp           : abap.char(1);
+  bsart           : abap.char(4);
+  lifnr           : abap.char(10);
+  ekorg           : abap.char(4);
+  ekgrp           : abap.char(3);
+  waers           : waers;
+  bedat           : abap.dats;
+  created_by      : syuname;
+  created_at      : timestampl;
+  last_changed_by : syuname;
+  last_changed_at : timestampl;
+
+}

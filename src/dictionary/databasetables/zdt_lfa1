@@ -1,0 +1,10 @@
+@EndUserText.label : 'Supplier Master (General Section)'
+@AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
+@AbapCatalog.tableCategory : #TRANSPARENT
+@AbapCatalog.deliveryClass : #A
+@AbapCatalog.dataMaintenance : #RESTRICTED
+define table zdt_lfa1 {
+  key lifnr : abap.char(10) not null;
+  name1     : abap.char(35);
+
+}
