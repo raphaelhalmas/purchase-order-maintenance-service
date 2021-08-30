@@ -28,7 +28,7 @@ etag master LastChangedAt
 
   field ( readonly, numbering : managed ) PurchasingDocumentId;
 
-  field ( readonly ) DocumentCurrency, CreatedBy, CreatedAt, LastChangedBy, LastChangedAt;
+  field ( readonly ) PurchasingDocumentNetAmount, DocumentCurrency, CreatedBy, CreatedAt, LastChangedBy, LastChangedAt;
 
   //field ( mandatory ) PurchasingDocumentType, Supplier, PurchasingDocumentDate,
   //DocumentCurrency, CompanyCode, PurchasingOrganization, PurchasingGroup;
@@ -37,7 +37,9 @@ etag master LastChangedAt
   update;
   delete;
 
-  determination setPurchasingDocument on save { create; }
+  internal action recalculateTotalPrice;
+
+  determination setDocumentNumber on save { create; }
   determination setDocumentCurrency on save { create; }
 
   association _PurchasingDocumentItem { create; }
@@ -67,12 +69,11 @@ lock dependent by _PurchasingDocument
 
   //field( mandatory ) OrderQuantity, NetPriceAmount;
 
-  determination setPurchasingDocumentNetAmount on modify { field OrderQuantity, NetPriceAmount; }
-
   update;
   delete;
 
-  determination setPurchasingDocumentItem on save { create; }
+  determination setItemNumber on save { create; }
+  determination calculateTotalPrice on modify { field OrderQuantity, NetPriceAmount; }
 
   association _PurchasingDocument;
 }

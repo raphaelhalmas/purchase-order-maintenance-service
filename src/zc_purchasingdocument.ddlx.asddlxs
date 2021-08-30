@@ -82,7 +82,7 @@ annotate view ZC_PurchasingDocument with
   @UI.textArrangement: #TEXT_FIRST
   PurchasingGroup;
   
-  @UI.fieldGroup: [{ position: 40, label: 'Net Order Value', qualifier: 'FieldGroup1' }]
+  @UI.fieldGroup: [{ position: 40, label: 'Net Order Value', qualifier: 'FieldGroup1', importance: #HIGH }]
   @UI.lineItem: [{ importance: #HIGH, position: 50, label: 'Net Order Value'}]
   PurchasingDocumentNetAmount;
 
