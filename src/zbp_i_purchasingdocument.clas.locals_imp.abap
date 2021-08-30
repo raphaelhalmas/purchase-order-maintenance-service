@@ -11,10 +11,11 @@ CLASS lhc_purchasingdocument DEFINITION INHERITING FROM cl_abap_behavior_handler
     METHODS setDocumentCurrency FOR DETERMINE ON SAVE
       IMPORTING keys FOR PurchasingDocument~setDocumentCurrency.
 
-    METHODS calculateTotalPrice FOR DETERMINE ON MODIFY
-      IMPORTING keys FOR PurchasingDocumentItem~calculateTotalPrice.
-    METHODS recalculateTotalPrice FOR MODIFY
-      IMPORTING keys FOR ACTION PurchasingDocument~recalculateTotalPrice.
+    METHODS calculateNetAmount FOR DETERMINE ON MODIFY
+      IMPORTING keys FOR PurchasingDocumentItem~calculateNetAmount.
+
+    METHODS recalculateNetAmount FOR MODIFY
+      IMPORTING keys FOR ACTION PurchasingDocument~recalculateNetAmount.
 
 ENDCLASS.
 
@@ -93,7 +94,7 @@ CLASS lhc_purchasingdocument IMPLEMENTATION.
         REPORTED DATA(reported_data).
   ENDMETHOD.
 
-  METHOD calculateTotalPrice.
+  METHOD calculateNetAmount.
     READ ENTITIES OF ZI_PurchasingDocument IN LOCAL MODE
       ENTITY PurchasingDocumentItem BY \_PurchasingDocument
       FIELDS ( PurchasingDocumentId )
@@ -103,15 +104,15 @@ CLASS lhc_purchasingdocument IMPLEMENTATION.
 
     MODIFY ENTITIES OF ZI_PurchasingDocument IN LOCAL MODE
       ENTITY PurchasingDocument
-      EXECUTE recalculateTotalPrice
+      EXECUTE recalculateNetAmount
       FROM CORRESPONDING #( purchasing_documents )
       REPORTED DATA(execute_reported).
 
     reported = CORRESPONDING #( DEEP execute_reported ).
   ENDMETHOD.
 
-  METHOD recalculateTotalPrice.
-    DATA: total_price TYPE p DECIMALS 2 LENGTH 15.
+  METHOD recalculateNetAmount.
+    DATA: net_amount TYPE p DECIMALS 2 LENGTH 15.
 
     READ ENTITIES OF ZI_PurchasingDocument IN LOCAL MODE
       ENTITY PurchasingDocument
@@ -127,10 +128,11 @@ CLASS lhc_purchasingdocument IMPLEMENTATION.
         RESULT DATA(purchasing_document_items).
 
       LOOP AT purchasing_document_items ASSIGNING FIELD-SYMBOL(<purchasing_document_item>).
-        total_price += <purchasing_document_item>-OrderQuantity * <purchasing_document_item>-NetPriceAmount.
+        net_amount += <purchasing_document_item>-OrderQuantity * <purchasing_document_item>-NetPriceAmount.
       ENDLOOP.
 
-      <purchasing_document>-PurchasingDocumentNetAmount = total_price.
+      <purchasing_document>-PurchasingDocumentNetAmount = net_amount.
+      CLEAR net_amount.
     ENDLOOP.
 
 *   MODIFY ENTITIES OF ZI_PurchasingDocument IN LOCAL MODE

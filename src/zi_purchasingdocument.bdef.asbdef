@@ -37,7 +37,7 @@ etag master LastChangedAt
   update;
   delete;
 
-  internal action recalculateTotalPrice;
+  internal action recalculateNetAmount;
 
   determination setDocumentNumber on save { create; }
   determination setDocumentCurrency on save { create; }
@@ -73,7 +73,7 @@ lock dependent by _PurchasingDocument
   delete;
 
   determination setItemNumber on save { create; }
-  determination calculateTotalPrice on modify { field OrderQuantity, NetPriceAmount; }
+  determination calculateNetAmount on modify { field OrderQuantity, NetPriceAmount; }
 
   association _PurchasingDocument;
 }
