@@ -18,7 +18,8 @@ etag master LastChangedAt
     PurchasingOrganization = ekorg;
     PurchasingGroup = ekgrp;
     DocumentCurrency = waers;
-    PurchasingDocumentOrderDate = bedat;
+    PurchasingDocumentDate = bedat;
+    PurchasingDocumentNetAmount = netwr;
     CreatedBy = created_by;
     CreatedAt = created_at;
     LastChangedBy = last_changed_by;
@@ -29,7 +30,7 @@ etag master LastChangedAt
 
   field ( readonly ) DocumentCurrency, CreatedBy, CreatedAt, LastChangedBy, LastChangedAt;
 
-  //field ( mandatory ) PurchasingDocumentType, Supplier, PurchasingDocumentOrderDate,
+  //field ( mandatory ) PurchasingDocumentType, Supplier, PurchasingDocumentDate,
   //DocumentCurrency, CompanyCode, PurchasingOrganization, PurchasingGroup;
 
   create;
@@ -65,6 +66,8 @@ lock dependent by _PurchasingDocument
   field( readonly ) PurchasingDocumentId, PurchasingDocument, PurchasingDocumentItem, DocumentCurrency;
 
   //field( mandatory ) OrderQuantity, NetPriceAmount;
+
+  determination setPurchasingDocumentNetAmount on modify { field OrderQuantity, NetPriceAmount; }
 
   update;
   delete;

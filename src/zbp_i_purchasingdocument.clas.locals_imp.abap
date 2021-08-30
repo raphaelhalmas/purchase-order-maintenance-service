@@ -8,6 +8,8 @@ CLASS LHC_PurchasingDocument DEFINITION INHERITING FROM cl_abap_behavior_handler
       IMPORTING keys FOR PurchasingDocumentItem~setPurchasingDocumentItem.
     METHODS setDocumentCurrency FOR DETERMINE ON SAVE
       IMPORTING keys FOR PurchasingDocument~setDocumentCurrency.
+    METHODS setPurchasingDocumentNetAmount FOR DETERMINE ON MODIFY
+      IMPORTING keys FOR PurchasingDocumentItem~setPurchasingDocumentNetAmount.
 
 ENDCLASS.
 
@@ -111,6 +113,65 @@ CLASS LHC_PurchasingDocument IMPLEMENTATION.
           DocumentCurrency = 'USD' )
         )
         REPORTED DATA(reported_data).
+  ENDMETHOD.
+
+  METHOD setPurchasingDocumentNetAmount.
+    DATA: net_amount TYPE p DECIMALS 2 LENGTH 15.
+    DATA: entities_to_be_updated TYPE TABLE FOR UPDATE ZI_PurchasingDocument\\PurchasingDocument.
+
+*   READ ENTITIES OF ZI_PurchasingDocument IN LOCAL MODE
+*     ENTITY PurchasingDocument
+*     ALL FIELDS WITH CORRESPONDING #( keys )
+*     RESULT DATA(purchasing_documents).
+
+    READ ENTITIES OF ZI_PurchasingDocument IN LOCAL MODE
+      ENTITY PurchasingDocumentItem BY \_PurchasingDocument
+        ALL FIELDS WITH CORRESPONDING #( keys )
+        RESULT DATA(purchasing_documents).
+
+    LOOP AT purchasing_documents ASSIGNING FIELD-SYMBOL(<purchasing_document>).
+      READ ENTITIES OF ZI_PurchasingDocument IN LOCAL MODE
+        ENTITY PurchasingDocument BY \_PurchasingDocumentItem
+        FIELDS ( OrderQuantity NetPriceAmount )
+        WITH VALUE #( ( %key = <purchasing_document>-%key ) )
+        RESULT DATA(purchasing_document_items).
+
+      LOOP AT purchasing_document_items ASSIGNING FIELD-SYMBOL(<purchasing_document_item>).
+        net_amount += <purchasing_document_item>-OrderQuantity * <purchasing_document_item>-NetPriceAmount.
+      ENDLOOP.
+
+      <purchasing_document>-PurchasingDocumentNetAmount = net_amount.
+
+      CLEAR purchasing_document_items.
+    ENDLOOP.
+
+*   entities_to_be_updated = VALUE #( FOR purchasing_document IN purchasing_documents (
+*     %tky = purchasing_document-%tky
+*     PurchasingDocumentNetAmount = purchasing_document-PurchasingDocumentNetAmount
+*     %control-PurchasingDocumentNetAmount = if_abap_behv=>mk-on ) ).
+*
+*   MODIFY ENTITIES OF ZI_PurchasingDocument IN LOCAL MODE
+*     ENTITY PurchasingDocument
+*     UPDATE FROM entities_to_be_updated
+*     REPORTED DATA(reported_data).
+*
+*   reported-PurchasingDocument = CORRESPONDING #( reported_data-PurchasingDocument ).
+
+    MODIFY ENTITIES OF ZI_PurchasingDocument IN LOCAL MODE
+      ENTITY PurchasingDocument
+        UPDATE FIELDS ( PurchasingDocumentNetAmount )
+        WITH VALUE #( FOR purchasing_document IN purchasing_documents (
+          %key = purchasing_document-%key
+          PurchasingDocumentNetAmount = purchasing_document-PurchasingDocumentNetAmount
+          %control-PurchasingDocumentNetAmount = if_abap_behv=>mk-on ) )
+        REPORTED DATA(reported_data).
+
+*   MODIFY ENTITIES OF ZI_PurchasingDocument IN LOCAL MODE
+*     ENTITY PurchasingDocument
+*     UPDATE FIELDS ( PurchasingDocumentNetAmount ) WITH entities_to_be_updated
+*     REPORTED DATA(reported_data).
+*
+*   reported = CORRESPONDING #( DEEP reported_data ).
   ENDMETHOD.
 
 ENDCLASS.

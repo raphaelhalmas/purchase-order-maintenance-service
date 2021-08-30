@@ -17,9 +17,9 @@ CLASS ZCL_Generate_T024_Data IMPLEMENTATION.
   METHOD if_oo_adt_classrun~main.
     DATA lt_t024 TYPE TABLE OF zdt_t024.
 
-    lt_t024 = VALUE #(
-      ( ekgrp = `PCT` eknam = `Construction` )
-    ).
+    lt_t024 = VALUE #( (
+      ekgrp = `PCT`
+      eknam = `Construction` ) ).
 
     DELETE FROM zdt_t024.
     INSERT zdt_t024 FROM TABLE @lt_t024.

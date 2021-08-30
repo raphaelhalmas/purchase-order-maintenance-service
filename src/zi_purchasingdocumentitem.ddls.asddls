@@ -25,7 +25,7 @@ define view ZI_PurchasingDocumentItem
   meins as OrderQuantityUnit,
   
   @Semantics.amount.currencyCode: 'DocumentCurrency'
-  cast(netpr as abap.dec(13,2)) as NetPriceAmount,
+  cast(netpr as abap.dec(11,2)) as NetPriceAmount,
   
   _PurchasingDocument.DocumentCurrency as DocumentCurrency,
     

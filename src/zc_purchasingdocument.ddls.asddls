@@ -30,7 +30,8 @@ define root view entity ZC_PurchasingDocument
   PurchasingOrganizationName,
   
   DocumentCurrency,
-  PurchasingDocumentOrderDate,
+  PurchasingDocumentDate,
+  PurchasingDocumentNetAmount,
   
   _Supplier,
   

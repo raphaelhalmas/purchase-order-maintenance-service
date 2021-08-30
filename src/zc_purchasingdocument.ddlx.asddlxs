@@ -82,11 +82,11 @@ annotate view ZC_PurchasingDocument with
   @UI.textArrangement: #TEXT_FIRST
   PurchasingGroup;
   
-  @Consumption.valueHelpDefinition: [{ entity: { name:'I_Currency', element: 'Currency' } }]
-  @UI.fieldGroup: [{ position: 40, label: 'Currency', qualifier: 'FieldGroup1' }]
-  DocumentCurrency;
+  @UI.fieldGroup: [{ position: 40, label: 'Net Order Value', qualifier: 'FieldGroup1' }]
+  @UI.lineItem: [{ importance: #HIGH, position: 50, label: 'Net Order Value'}]
+  PurchasingDocumentNetAmount;
 
   @UI.fieldGroup: [{ position: 30, label: 'Doc. Date', qualifier: 'FieldGroup1' }]
   @UI.lineItem: [ { position: 40, importance: #HIGH, label: 'Doc. Date' } ]  
-  PurchasingDocumentOrderDate;  
+  PurchasingDocumentDate;  
 }

@@ -17,9 +17,9 @@ CLASS ZCL_Generate_T024E_Data IMPLEMENTATION.
   METHOD if_oo_adt_classrun~main.
     DATA lt_t024e TYPE TABLE OF zdt_t024e.
 
-    lt_t024e = VALUE #(
-      ( ekorg = `AHSF` ekotx = `AHS Florida` )
-    ).
+    lt_t024e = VALUE #( (
+      ekorg = `AHSF`
+      ekotx = `AHS Florida` ) ).
 
     DELETE FROM zdt_t024e.
     INSERT zdt_t024e FROM TABLE @lt_t024e.

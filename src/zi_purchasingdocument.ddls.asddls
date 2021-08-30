@@ -40,7 +40,10 @@ define root view entity ZI_PurchasingDocument
   
   waers as DocumentCurrency,
   
-  bedat as PurchasingDocumentOrderDate,
+  bedat as PurchasingDocumentDate,
+  
+  @Semantics.amount.currencyCode: 'DocumentCurrency'
+  netwr as PurchasingDocumentNetAmount,
     
   @Semantics.user.createdBy: true
   created_by as CreatedBy,

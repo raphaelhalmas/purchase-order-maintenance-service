@@ -17,9 +17,9 @@ CLASS ZCL_Generate_T161_Data IMPLEMENTATION.
   METHOD if_oo_adt_classrun~main.
     DATA lt_t161 TYPE TABLE OF zdt_t161.
 
-    lt_t161 = VALUE #(
-      ( bstyp = `F` bsart = `ZPPD` )
-    ).
+    lt_t161 = VALUE #( (
+      bstyp = `F`
+      bsart = `ZPPD` ) ).
 
     DELETE FROM zdt_t161.
     INSERT zdt_t161 FROM TABLE @lt_t161.
