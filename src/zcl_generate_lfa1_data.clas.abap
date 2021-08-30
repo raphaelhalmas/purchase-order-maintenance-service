@@ -19,7 +19,11 @@ CLASS ZCL_Generate_LFA1_Data IMPLEMENTATION.
 
     lt_lfa1 = VALUE #( (
       lifnr = `0000100026`
-      name1 = `Aurora Plumbing Corp.` ) ).
+      name1 = `Aurora Plumbing Corp.`
+    )
+    (
+      lifnr = `0000100281`
+      name1 = `Xtreme Fire Protection, Inc.` ) ).
 
     DELETE FROM zdt_lfa1.
     INSERT zdt_lfa1 FROM TABLE @lt_lfa1.
