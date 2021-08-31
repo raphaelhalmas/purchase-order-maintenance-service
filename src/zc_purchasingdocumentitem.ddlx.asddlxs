@@ -46,10 +46,7 @@ annotate view ZC_PurchasingDocumentItem with
   @UI.fieldGroup: [{ position: 40, label: 'PO Quantity', qualifier: 'FieldGroup1' }]
   @UI.lineItem: [{ importance: #HIGH, position: 40, label: 'PO Quantity'}]  
   OrderQuantity;
-  
-  @Consumption.valueHelpDefinition: [{ entity: { name:'I_UnitOfMeasure', element: 'UnitOfMeasure' } }]
-  OrderQuantityUnit;
-  
+ 
   @UI.fieldGroup: [{ position: 50, label: 'Net Price', qualifier: 'FieldGroup1' }]
   @UI.lineItem: [{ importance: #HIGH, position: 50, label: 'Net Price'}]  
   NetPriceAmount;  

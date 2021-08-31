@@ -53,30 +53,29 @@ annotate view ZC_PurchasingDocument with
   @UI.lineItem: [{ position: 10, importance: #HIGH, label: 'Purchase Order' }, { position: 10, label: 'Adopt', type: #FOR_ACTION, dataAction: 'copyPurchasingDocument' }]
   PurchasingDocument;
   
-  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_PurchasingDocumentType', element: 'PurchasingDocumentType' } }]
   @UI.fieldGroup: [{ position: 10, label: 'Order Type', qualifier: 'FieldGroup1' }]
   PurchasingDocumentType;
   
-  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_Supplier', element: 'Supplier' } }]    
   @UI.fieldGroup: [{ position: 20, label: 'Supplier', qualifier: 'FieldGroup1' }]
-  @UI.lineItem: [{ position: 20, importance: #HIGH, label: 'Supplier' }]
   @UI.selectionField: [{ position: 20 }]
   @UI.textArrangement: #TEXT_FIRST
-  Supplier;  
+  Supplier;
+  
+  @UI.lineItem: [{ position: 20, importance: #HIGH, label: 'Supplier' }]
+  SupplierName;
  
-  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_CompanyCode', element: 'CompanyCode' } }]
-  @UI.fieldGroup: [{ position: 10, label: 'Company Code', qualifier: 'FieldGroup2' }]
-  @UI.lineItem: [{ position: 30, importance: #HIGH, label: 'Company Code' }]
+  @UI.fieldGroup: [{ position: 10, label: 'Company Code', qualifier: 'FieldGroup2' }]  
   @UI.selectionField: [{ position: 40 }]
   @UI.textArrangement: #TEXT_FIRST
   CompanyCode;
  
-  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_PurchasingOrganization', element: 'PurchasingOrganization' } }]
+  @UI.lineItem: [{ position: 30, importance: #HIGH, label: 'Company Code' }]
+  CompanyCodeName;
+ 
   @UI.fieldGroup: [{ position: 20, label: 'Purchasing Organization', qualifier: 'FieldGroup2' }]
   @UI.textArrangement: #TEXT_FIRST
   PurchasingOrganization;
   
-  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_PurchasingGroup', element: 'PurchasingGroup' } }]
   @UI.fieldGroup: [{ position: 30, label: 'Purchasing Group', qualifier: 'FieldGroup2' }]
   @UI.selectionField: [{ position: 30 }]
   @UI.textArrangement: #TEXT_FIRST

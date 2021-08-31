@@ -22,6 +22,7 @@ define view ZI_PurchasingDocumentItem
   @Semantics.quantity.unitOfMeasure: 'OrderQuantityUnit'
   menge as OrderQuantity,
   
+  @Consumption.valueHelpDefinition: [{ entity: { name:'I_UnitOfMeasure', element: 'UnitOfMeasure' } }]
   meins as OrderQuantityUnit,
   
   @Semantics.amount.currencyCode: 'DocumentCurrency'

@@ -17,26 +17,28 @@ define root view entity ZI_PurchasingDocument
   association [0..1] to ZI_Supplier as _Supplier on $projection.Supplier = _Supplier.Supplier
   association [0..1] to ZI_PurchasingOrganization as _PurchasingOrganization on $projection.PurchasingOrganization = _PurchasingOrganization.PurchasingOrganization
   association [0..1] to ZI_PurchasingGroup as _PurchasingGroup on $projection.PurchasingGroup = _PurchasingGroup.PurchasingGroup
-{  
+{
   key purg_doc_id as PurchasingDocumentId,
   ebeln as PurchasingDocument,
-  
+
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_CompanyCode', element: 'CompanyCode' } }]  
   bukrs as CompanyCode,
   _CompanyCode.CompanyCodeName as CompanyCodeName,
   
   bstyp as PurchasingDocumentCategory,
     
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_PurchasingDocumentType', element: 'PurchasingDocumentType' } }]
   bsart as PurchasingDocumentType,
-  _PurchaseOrderTypeText.PurchasingDocumentTypeName as PurchasingDocumentTypeName,
     
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_Supplier', element: 'Supplier' } }]
   lifnr as Supplier,
   _Supplier.SupplierName as SupplierName, 
 
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_PurchasingOrganization', element: 'PurchasingOrganization' } }]
   ekorg as PurchasingOrganization,
-  _PurchasingOrganization.PurchasingOrganizationName as PurchasingOrganizationName,
   
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_PurchasingGroup', element: 'PurchasingGroup' } }]
   ekgrp as PurchasingGroup,
-  _PurchasingGroup.PurchasingGroupName as PurchasingGroupName,
   
   waers as DocumentCurrency,
   

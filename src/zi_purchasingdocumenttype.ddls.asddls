@@ -3,6 +3,7 @@
 @AbapCatalog.preserveKey: true
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Purchasing Document Type'
+@Search.searchable: true
 define view ZI_PurchasingDocumentType 
   as select from zdt_t161
    
@@ -14,11 +15,12 @@ define view ZI_PurchasingDocumentType
   key bstyp as PurchasingDocumentCategory,
   
   @EndUserText.label: 'Order Type'
-  @ObjectModel.text.element: ['PurchasingDocumentTypeName']
+  @ObjectModel.text.element: ['PurchasingDocumentTypeName']  
   key bsart as PurchasingDocumentType,
   
-  @EndUserText.label: 'Order Type Description'
   @Consumption.filter.hidden: true
+  @EndUserText.label: 'Order Type Description'
+  @Search.defaultSearchElement: true
   _Text.PurchasingDocumentTypeName as PurchasingDocumentTypeName,
   
   _Text  

@@ -11,25 +11,17 @@ define root view entity ZC_PurchasingDocument
   
   PurchasingDocument,
   
-  @ObjectModel: { text.element: [ 'PurchasingDocumentTypeName' ] }
   PurchasingDocumentType,
-  PurchasingDocumentTypeName,
   
-  @ObjectModel: { text.element: [ 'SupplierName' ] }
   Supplier,
   SupplierName,
   
-  @ObjectModel: { text.element: [ 'CompanyCodeName' ] }
   CompanyCode,
   CompanyCodeName,
   
-  @ObjectModel: { text.element: [ 'PurchasingGroupName' ] }
   PurchasingGroup,
-  PurchasingGroupName,  
   
-  @ObjectModel: { text.element: [ 'PurchasingOrganizationName' ] }
   PurchasingOrganization,
-  PurchasingOrganizationName,
   
   DocumentCurrency,
   PurchasingDocumentDate,
