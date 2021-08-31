@@ -42,6 +42,8 @@ etag master LastChangedAt
   determination setDocumentNumber on save { create; }
   determination setDocumentCurrency on save { create; }
 
+  action copyPurchasingDocument result [1] $self;
+
   association _PurchasingDocumentItem { create; }
 }
 

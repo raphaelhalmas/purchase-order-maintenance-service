@@ -17,6 +17,9 @@ CLASS lhc_purchasingdocument DEFINITION INHERITING FROM cl_abap_behavior_handler
     METHODS recalculateNetAmount FOR MODIFY
       IMPORTING keys FOR ACTION PurchasingDocument~recalculateNetAmount.
 
+    METHODS copyPurchasingDocument FOR MODIFY
+      IMPORTING keys FOR ACTION PurchasingDocument~copyPurchasingDocument RESULT result.
+
 ENDCLASS.
 
 CLASS lhc_purchasingdocument IMPLEMENTATION.
@@ -146,6 +149,44 @@ CLASS lhc_purchasingdocument IMPLEMENTATION.
         PurchasingDocumentId = purchasing_document-PurchasingDocumentId
         PurchasingDocumentNetAmount = purchasing_document-PurchasingDocumentNetAmount
         %control-PurchasingDocumentNetAmount = if_abap_behv=>mk-on ) ) .
+  ENDMETHOD.
+
+  METHOD copyPurchasingDocument.
+    SELECT SINGLE FROM zdt_ekko FIELDS MAX( ebeln ) INTO @DATA(document_number).
+
+    READ ENTITIES OF ZI_PurchasingDocument IN LOCAL MODE
+      ENTITY PurchasingDocument
+      ALL FIELDS WITH CORRESPONDING #( keys )
+      RESULT DATA(purchasing_documents).
+
+    LOOP AT purchasing_documents ASSIGNING FIELD-SYMBOL(<purchasing_document>).
+      document_number = document_number + 1.
+      <purchasing_document>-PurchasingDocument = CONDENSE( document_number ).
+    ENDLOOP.
+
+    MODIFY ENTITIES OF ZI_PurchasingDocument IN LOCAL MODE
+      ENTITY PurchasingDocument
+      CREATE FIELDS (
+        PurchasingDocument
+        CompanyCode
+        PurchasingDocumentCategory
+        PurchasingDocumentType
+        Supplier
+        PurchasingOrganization
+        PurchasingGroup
+        DocumentCurrency
+        PurchasingDocumentDate
+        PurchasingDocumentNetAmount
+      )
+      WITH CORRESPONDING #( purchasing_documents )
+      MAPPED DATA(mapped_data)
+      FAILED DATA(failed_data)
+      REPORTED DATA(reported_data).
+
+    result = VALUE #( FOR purchasing_document IN purchasing_documents INDEX INTO table_index (
+      %cid_ref = keys[ table_index ]-%cid_ref
+      PurchasingDocumentId = keys[ table_index ]-PurchasingDocumentId
+      %param = CORRESPONDING #( purchasing_document ) ) ).
   ENDMETHOD.
 
 ENDCLASS.

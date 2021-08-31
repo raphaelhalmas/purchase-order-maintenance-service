@@ -7,6 +7,8 @@ define behavior for ZC_PurchasingDocument //alias <alias_name>
   use update;
   use delete;
 
+  use action copyPurchasingDocument;
+
   use association _PurchasingDocumentItem { create; }
 }
 

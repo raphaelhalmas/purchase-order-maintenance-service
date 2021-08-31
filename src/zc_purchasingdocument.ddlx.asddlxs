@@ -50,7 +50,7 @@ annotate view ZC_PurchasingDocument with
   PurchasingDocumentId;
 
   @Search.defaultSearchElement: true
-  @UI.lineItem: [{ position: 10, importance: #HIGH, label: 'Purchase Order' }]
+  @UI.lineItem: [{ position: 10, importance: #HIGH, label: 'Purchase Order' }, { position: 10, label: 'Adopt', type: #FOR_ACTION, dataAction: 'copyPurchasingDocument' }]
   PurchasingDocument;
   
   @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_PurchasingDocumentType', element: 'PurchasingDocumentType' } }]
