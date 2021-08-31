@@ -160,13 +160,18 @@ CLASS lhc_purchasingdocument IMPLEMENTATION.
       RESULT DATA(purchasing_documents).
 
     LOOP AT purchasing_documents ASSIGNING FIELD-SYMBOL(<purchasing_document>).
-      document_number = document_number + 1.
-      <purchasing_document>-PurchasingDocument = CONDENSE( document_number ).
+      TRY.
+        document_number = document_number + 1.
+        <purchasing_document>-PurchasingDocumentId = cl_system_uuid=>create_uuid_x16_static( ).
+        <purchasing_document>-PurchasingDocument = CONDENSE( document_number ).
+      CATCH cx_uuid_error.
+      ENDTRY.
     ENDLOOP.
 
     MODIFY ENTITIES OF ZI_PurchasingDocument IN LOCAL MODE
       ENTITY PurchasingDocument
       CREATE FIELDS (
+        PurchasingDocumentId
         PurchasingDocument
         CompanyCode
         PurchasingDocumentCategory
@@ -183,9 +188,11 @@ CLASS lhc_purchasingdocument IMPLEMENTATION.
       FAILED DATA(failed_data)
       REPORTED DATA(reported_data).
 
+    SELECT SINGLE FROM zdt_ekko FIELDS MAX( purg_doc_id ) INTO @DATA(purchasing_document_id).
+
     result = VALUE #( FOR purchasing_document IN purchasing_documents INDEX INTO table_index (
       %cid_ref = keys[ table_index ]-%cid_ref
-      PurchasingDocumentId = keys[ table_index ]-PurchasingDocumentId
+      purchasingDocumentId = purchasing_document_id
       %param = CORRESPONDING #( purchasing_document ) ) ).
   ENDMETHOD.
 
