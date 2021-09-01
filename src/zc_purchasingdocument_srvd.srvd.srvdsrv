@@ -1,5 +1,5 @@
 @EndUserText.label: 'Purchasing Document SD'
-define service ZC_PurchasingDocument_SD {
+define service ZC_PURCHASINGDOCUMENT_SRVD {
   expose ZC_PurchasingDocument;
   expose ZC_PurchasingDocumentItem;
   expose ZI_CompanyCode;
