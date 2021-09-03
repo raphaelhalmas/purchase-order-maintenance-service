@@ -59,6 +59,9 @@ define root view entity ZI_PurchasingDocument
   @Semantics.systemDateTime.lastChangedAt: true
   last_changed_at as LastChangedAt,
     
+  @Semantics.systemDateTime.localInstanceLastChangedAt: true
+  local_last_changed_at as LocalLastChangedAt,
+    
   _PurchasingDocumentItem,
   _PurchaseOrderType,
   _PurchaseOrderTypeText,

@@ -1,5 +1,4 @@
 @Metadata.layer: #CORE
-@Search.searchable: true
 
 @UI.headerInfo: {
   title: {
@@ -10,7 +9,7 @@
   typeNamePlural: 'Purchase Orders'
 }
 
-@UI.presentationVariant: [{ sortOrder: [{ by: 'PurchasingDocument', direction:  #ASC }] }]
+@UI.presentationVariant: [{ sortOrder: [{ by: 'PurchasingDocument', direction: #ASC }], visualizations: [{ type: #AS_LINEITEM }] }]
 annotate view ZC_PurchasingDocument with
 {
   @UI.facet: [{ 

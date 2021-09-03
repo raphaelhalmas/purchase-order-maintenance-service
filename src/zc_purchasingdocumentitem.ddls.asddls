@@ -1,8 +1,7 @@
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Purchase Order Item'
 @Metadata.allowExtensions: true
-@ObjectModel.representativeKey: 'PurchasingDocumentItemId'
-@ObjectModel.semanticKey: ['PurchasingDocumentItemId']
+@ObjectModel.semanticKey: ['PurchasingDocumentItem']
 define view entity ZC_PurchasingDocumentItem
   as projection on ZI_PurchasingDocumentItem   
 {
