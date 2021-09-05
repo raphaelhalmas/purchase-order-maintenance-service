@@ -18,7 +18,7 @@ CLASS ZCL_Generate_EKKO_Data IMPLEMENTATION.
     DATA lt_ekko TYPE TABLE OF zdt_ekko.
 
     INSERT VALUE #(
-      purg_doc_id = `121DC050A0BD1EDC82BBFE986C2A4FF2`
+      purg_doc_id = `121C7BA40F231EEC83D3EBBAF1CA97D4`
       ebeln = `4500000837`
       bukrs = `AH02`
       bstyp = `F`
@@ -33,7 +33,7 @@ CLASS ZCL_Generate_EKKO_Data IMPLEMENTATION.
     INTO TABLE lt_ekko.
 
     INSERT VALUE #(
-      purg_doc_id = `121DC050A0BD1EDC82BBFE986C2A6FF2`
+      purg_doc_id = `1208CCFBEA871EDC83D3F154E3DFC37A`
       ebeln = `4500002025`
       bukrs = `AH02`
       bstyp = `F`

@@ -27,7 +27,7 @@ define root view entity ZC_PurchasingDocument
   PurchasingDocumentDate,
   PurchasingDocumentNetAmount,
   
-  _Supplier,
+  //_Supplier,
   
   _PurchasingDocumentItem : redirected to composition child ZC_PurchasingDocumentItem   
 }

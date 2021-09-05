@@ -52,7 +52,7 @@
    <TABL_EXTRAS>
     <TDDAT>
      <TABNAME>ZDT_T024</TABNAME>
-     <CCLASS>CUS_DEV_SUP_RO</CCLASS>
+     <CCLASS>CUS_DEV_SUP_DA</CCLASS>
     </TDDAT>
    </TABL_EXTRAS>
   </asx:values>

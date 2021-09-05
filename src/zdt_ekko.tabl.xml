@@ -158,7 +158,7 @@
    <TABL_EXTRAS>
     <TDDAT>
      <TABNAME>ZDT_EKKO</TABNAME>
-     <CCLASS>CUS_DEV_SUP_RO</CCLASS>
+     <CCLASS>CUS_DEV_SUP_DA</CCLASS>
     </TDDAT>
    </TABL_EXTRAS>
   </asx:values>

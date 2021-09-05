@@ -1,4 +1,5 @@
 @Metadata.layer: #CORE
+@Search.searchable:true
 
 @UI.headerInfo: {
   title: {
@@ -49,7 +50,7 @@ annotate view ZC_PurchasingDocument with
   PurchasingDocumentId;
 
   @Search.defaultSearchElement: true
-  @UI.lineItem: [{ position: 10, importance: #HIGH, label: 'Purchase Order' }, { position: 10, label: 'Adopt', type: #FOR_ACTION, dataAction: 'copyPurchasingDocument' }]
+  @UI.lineItem: [{ position: 10, importance: #HIGH, label: 'Purchase Order' }, { position: 10, label: 'Copy', type: #FOR_ACTION, dataAction: 'copyPurchasingDocument' }]
   PurchasingDocument;
   
   @UI.fieldGroup: [{ position: 10, label: 'Order Type', qualifier: 'FieldGroup1' }]

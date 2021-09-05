@@ -18,7 +18,7 @@ CLASS lhc_purchasingdocument DEFINITION INHERITING FROM cl_abap_behavior_handler
       IMPORTING keys FOR ACTION PurchasingDocument~recalculateNetAmount.
 
     METHODS copyPurchasingDocument FOR MODIFY
-      IMPORTING keys FOR ACTION PurchasingDocument~copyPurchasingDocument RESULT result.
+      IMPORTING keys FOR ACTION PurchasingDocument~copyPurchasingDocument.
 
 ENDCLASS.
 
@@ -187,13 +187,6 @@ CLASS lhc_purchasingdocument IMPLEMENTATION.
       MAPPED DATA(mapped_data)
       FAILED DATA(failed_data)
       REPORTED DATA(reported_data).
-
-    SELECT SINGLE FROM zdt_ekko FIELDS MAX( purg_doc_id ) INTO @DATA(purchasing_document_id).
-
-    result = VALUE #( FOR purchasing_document IN purchasing_documents INDEX INTO table_index (
-      %cid_ref = keys[ table_index ]-%cid_ref
-      purchasingDocumentId = purchasing_document_id
-      %param = CORRESPONDING #( purchasing_document ) ) ).
   ENDMETHOD.
 
 ENDCLASS.

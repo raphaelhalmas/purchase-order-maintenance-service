@@ -22,7 +22,7 @@ CLASS ZCL_Generate_EKPO_Data IMPLEMENTATION.
 
       INSERT VALUE #(
         purg_doc_item_id = purg_doc_item_id
-        purg_doc_id = `121DC050A0BD1EDC82BBFE986C2A4FF2`
+        purg_doc_id = `121C7BA40F231EEC83D3EBBAF1CA97D4`
         ebeln = `4500000837`
         ebelp = `00010`
         txz01 = `BA Shop Drawing, Permit and Bond`
@@ -36,7 +36,7 @@ CLASS ZCL_Generate_EKPO_Data IMPLEMENTATION.
 
       INSERT VALUE #(
         purg_doc_item_id = purg_doc_item_id
-        purg_doc_id = `121DC050A0BD1EDC82BBFE986C2A6FF2`
+        purg_doc_id = `1208CCFBEA871EDC83D3F154E3DFC37A`
         ebeln = `4500002025`
         ebelp = `00010`
         txz01 = `BE Sprinkler Rough`
@@ -50,7 +50,7 @@ CLASS ZCL_Generate_EKPO_Data IMPLEMENTATION.
 
       INSERT VALUE #(
         purg_doc_item_id = purg_doc_item_id
-        purg_doc_id = `121DC050A0BD1EDC82BBFE986C2A6FF2`
+        purg_doc_id = `1208CCFBEA871EDC83D3F154E3DFC37A`
         ebeln = `4500002025`
         ebelp = `00020`
         txz01 = `BE Shopdrawing, Permit and Bond`
@@ -64,7 +64,7 @@ CLASS ZCL_Generate_EKPO_Data IMPLEMENTATION.
 
       INSERT VALUE #(
         purg_doc_item_id = purg_doc_item_id
-        purg_doc_id = `121DC050A0BD1EDC82BBFE986C2A6FF2`
+        purg_doc_id = `1208CCFBEA871EDC83D3F154E3DFC37A`
         ebeln = `4500002025`
         ebelp = `00030`
         txz01 = `BE 4" Underground Fire Service Line`
