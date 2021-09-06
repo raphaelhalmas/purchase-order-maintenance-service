@@ -86,6 +86,6 @@ annotate view ZC_PurchasingDocument with
   PurchasingDocumentNetAmount;
 
   @UI.fieldGroup: [{ position: 30, label: 'Doc. Date', qualifier: 'FieldGroup1' }]
-  @UI.lineItem: [ { position: 40, importance: #HIGH, label: 'Doc. Date' } ]  
+  @UI.lineItem: [{ position: 40, importance: #HIGH, label: 'Doc. Date' }]  
   PurchasingDocumentDate;  
 }
