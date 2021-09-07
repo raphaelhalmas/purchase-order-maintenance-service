@@ -187,6 +187,25 @@ CLASS lhc_purchasingdocument IMPLEMENTATION.
       MAPPED DATA(mapped_data)
       FAILED DATA(failed_data)
       REPORTED DATA(reported_data).
+
+    IF failed_data IS INITIAL.
+      SELECT SINGLE FROM zdt_t161t FIELDS batxt
+      WHERE bstyp = `F`
+      AND bsart = @<purchasing_document>-PurchasingDocumentType
+      INTO @DATA(document_type).
+
+      DATA(message) = new_message(
+        id = 'ZMM_PO_MANAGE'
+        number = '001'
+        severity = if_abap_behv_message=>severity-success
+        v1 = document_type
+        v2 = <purchasing_document>-PurchasingDocument ).
+
+      APPEND VALUE #(
+        %key = <purchasing_document>-%key
+        %msg = message ) TO reported-purchasingdocument.
+    ENDIF.
+
   ENDMETHOD.
 
 ENDCLASS.
