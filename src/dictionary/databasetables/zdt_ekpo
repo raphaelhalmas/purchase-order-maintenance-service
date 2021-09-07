@@ -4,16 +4,22 @@
 @AbapCatalog.deliveryClass : #A
 @AbapCatalog.dataMaintenance : #RESTRICTED
 define table zdt_ekpo {
-  key purg_doc_item_id : sysuuid_x16 not null;
-  purg_doc_id          : sysuuid_x16 not null;
-  ebeln                : ebeln not null;
-  ebelp                : ebelp not null;
-  matnr                : abap.char(40);
-  txz01                : abap.char(40);
+  key client            : mandt not null;
+  key purg_doc_item_id  : sysuuid_x16 not null;
+  purg_doc_id           : sysuuid_x16 not null;
+  ebeln                 : ebeln not null;
+  ebelp                 : ebelp not null;
+  matnr                 : abap.char(40);
+  txz01                 : abap.char(40);
   @Semantics.quantity.unitOfMeasure : 'zdt_ekpo.meins'
-  menge                : abap.quan(13,2);
-  meins                : abap.unit(3);
+  menge                 : abap.quan(13,2);
+  meins                 : abap.unit(3);
   @Semantics.amount.currencyCode : 'zdt_ekko.waers'
-  netpr                : abap.curr(13,2);
+  netpr                 : abap.curr(11,2);
+  created_by            : syuname;
+  created_at            : timestampl;
+  last_changed_by       : syuname;
+  last_changed_at       : timestampl;
+  local_last_changed_at : timestampl;
 
 }

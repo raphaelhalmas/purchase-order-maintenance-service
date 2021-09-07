@@ -4,7 +4,8 @@
 @AbapCatalog.deliveryClass : #A
 @AbapCatalog.dataMaintenance : #RESTRICTED
 define table zdt_t024e {
-  key ekorg : abap.char(4) not null;
-  ekotx     : abap.char(20);
+  key client : mandt not null;
+  key ekorg  : abap.char(4) not null;
+  ekotx      : abap.char(20);
 
 }

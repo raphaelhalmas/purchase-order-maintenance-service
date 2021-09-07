@@ -4,8 +4,9 @@
 @AbapCatalog.deliveryClass : #A
 @AbapCatalog.dataMaintenance : #RESTRICTED
 define table zdt_t161t {
-  key bstyp : abap.char(1) not null;
-  key bsart : abap.char(4) not null;
-  batxt     : abap.char(20) not null;
+  key client : mandt not null;
+  key bstyp  : abap.char(1) not null;
+  key bsart  : abap.char(4) not null;
+  batxt      : abap.char(20) not null;
 
 }

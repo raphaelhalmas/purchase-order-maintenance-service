@@ -4,7 +4,8 @@
 @AbapCatalog.deliveryClass : #A
 @AbapCatalog.dataMaintenance : #RESTRICTED
 define table zdt_lfa1 {
-  key lifnr : abap.char(10) not null;
-  name1     : abap.char(35);
+  key client : mandt not null;
+  key lifnr  : abap.char(10) not null;
+  name1      : abap.char(35);
 
 }
