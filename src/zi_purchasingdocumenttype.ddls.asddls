@@ -3,6 +3,7 @@
 @AbapCatalog.preserveKey: true
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Purchasing Document Type'
+@ObjectModel.resultSet.sizeCategory: #XS -- drop down menu for value help
 @Search.searchable: true
 define view ZI_PurchasingDocumentType 
   as select from zdt_t161

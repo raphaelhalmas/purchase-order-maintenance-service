@@ -54,6 +54,8 @@ annotate view ZC_PurchasingDocument with
   PurchasingDocument;
   
   @UI.fieldGroup: [{ position: 10, label: 'Order Type', qualifier: 'FieldGroup1' }]
+  @UI.selectionField: [{ position: 10 }]
+  @UI.textArrangement: #TEXT_FIRST
   PurchasingDocumentType;
   
   @UI.fieldGroup: [{ position: 20, label: 'Supplier', qualifier: 'FieldGroup1' }]

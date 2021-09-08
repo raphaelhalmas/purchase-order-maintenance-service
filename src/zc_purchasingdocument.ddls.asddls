@@ -11,11 +11,13 @@ define root view entity ZC_PurchasingDocument
   
   PurchasingDocument,
   
+  @Consumption.filter.defaultValue: 'ZPPD'
   PurchasingDocumentType,
   
   Supplier,
   SupplierName,
-  
+
+  @Consumption.filter.defaultValue: 'AH02'  
   CompanyCode,
   CompanyCodeName,
   
