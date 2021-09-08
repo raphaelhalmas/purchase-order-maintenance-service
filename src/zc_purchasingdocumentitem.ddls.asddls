@@ -15,8 +15,13 @@ define view entity ZC_PurchasingDocumentItem
   PurchasingDocumentItemText,    
   OrderQuantity,
   OrderQuantityUnit,
+  
+  MaterialGroup,
+  MaterialGroupText,
+  
   NetPriceAmount,
   DocumentCurrency,
   
   _PurchasingDocument : redirected to parent ZC_PurchasingDocument
+  //_MaterialGroup
 }

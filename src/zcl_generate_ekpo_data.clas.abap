@@ -25,6 +25,7 @@ CLASS ZCL_Generate_EKPO_Data IMPLEMENTATION.
         purg_doc_id = `121C7BA40F231EEC83D3EBBAF1CA97D4`
         ebeln = `4500000837`
         ebelp = `00010`
+        matkl = `P001`
         txz01 = `BA Shop Drawing, Permit and Bond`
         menge = `1.000`
         meins = `AU`
@@ -39,6 +40,7 @@ CLASS ZCL_Generate_EKPO_Data IMPLEMENTATION.
         purg_doc_id = `1208CCFBEA871EDC83D3F154E3DFC37A`
         ebeln = `4500002025`
         ebelp = `00010`
+        matkl = `P001`
         txz01 = `BE Sprinkler Rough`
         menge = `1.000`
         meins = `AU`
@@ -53,6 +55,7 @@ CLASS ZCL_Generate_EKPO_Data IMPLEMENTATION.
         purg_doc_id = `1208CCFBEA871EDC83D3F154E3DFC37A`
         ebeln = `4500002025`
         ebelp = `00020`
+        matkl = `P001`
         txz01 = `BE Shopdrawing, Permit and Bond`
         menge = `1.000`
         meins = `AU`
@@ -67,6 +70,7 @@ CLASS ZCL_Generate_EKPO_Data IMPLEMENTATION.
         purg_doc_id = `1208CCFBEA871EDC83D3F154E3DFC37A`
         ebeln = `4500002025`
         ebelp = `00030`
+        matkl = `P001`
         txz01 = `BE 4" Underground Fire Service Line`
         menge = `1.000`
         meins = `AU`

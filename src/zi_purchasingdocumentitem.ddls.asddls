@@ -6,7 +6,8 @@
 define view ZI_PurchasingDocumentItem 
   as select from zdt_ekpo
   association to parent ZI_PurchasingDocument as _PurchasingDocument 
-  on $projection.PurchasingDocumentId = _PurchasingDocument.PurchasingDocumentId 
+  on $projection.PurchasingDocumentId = _PurchasingDocument.PurchasingDocumentId
+  association [0..1] to ZI_MaterialGroup as _MaterialGroup on $projection.MaterialGroup = _MaterialGroup.MaterialGroup 
 {
   key purg_doc_item_id as PurchasingDocumentItemId,
   purg_doc_id as PurchasingDocumentId, 
@@ -15,6 +16,12 @@ define view ZI_PurchasingDocumentItem
   ebelp as PurchasingDocumentItem,
   
   matnr as Material,
+  
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_MaterialGroup', element: 'MaterialGroup' } }]
+  //@ObjectModel.text.association: '_MaterialGroup'  
+  matkl as MaterialGroup,
+  concat(concat(concat(_MaterialGroup.MaterialGroupText, ' ('), matkl), ')') as MaterialGroupText,
+  //_MaterialGroup.MaterialGroupText as MaterialGroupText, 
   
   @Semantics.text: true
   txz01 as PurchasingDocumentItemText,
@@ -45,5 +52,6 @@ define view ZI_PurchasingDocumentItem
   @Semantics.systemDateTime.localInstanceLastChangedAt: true
   local_last_changed_at as LocalLastChangedAt,    
     
-  _PurchasingDocument
+  _PurchasingDocument,
+  _MaterialGroup
 }

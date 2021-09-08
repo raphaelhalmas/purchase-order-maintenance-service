@@ -46,8 +46,16 @@ annotate view ZC_PurchasingDocumentItem with
   @UI.fieldGroup: [{ position: 40, label: 'PO Quantity', qualifier: 'FieldGroup1' }]
   @UI.lineItem: [{ importance: #HIGH, position: 40, label: 'PO Quantity'}]  
   OrderQuantity;
+  
+  @UI.fieldGroup: [{ position: 50, label: 'Material Group', qualifier: 'FieldGroup1' }]
+  //@UI.lineItem: [{ importance: #HIGH, position: 50, label: 'Material Group'}]
+  //@UI.textArrangement: #TEXT_FIRST
+  MaterialGroup;
  
-  @UI.fieldGroup: [{ position: 50, label: 'Net Price', qualifier: 'FieldGroup1' }]
-  @UI.lineItem: [{ importance: #HIGH, position: 50, label: 'Net Price'}]  
-  NetPriceAmount;  
+  @UI.lineItem: [{ importance: #HIGH, position: 50, label: 'Material Group'}]
+  MaterialGroupText; 
+ 
+  @UI.fieldGroup: [{ position: 60, label: 'Net Price', qualifier: 'FieldGroup1' }]
+  @UI.lineItem: [{ importance: #HIGH, position: 60, label: 'Net Price'}]  
+  NetPriceAmount;
 }

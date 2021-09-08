@@ -60,6 +60,7 @@ lock dependent by _PurchasingDocument
     PurchasingDocument = ebeln;
     PurchasingDocumentItem = ebelp;
     Material = matnr;
+    MaterialGroup = matkl;
     PurchasingDocumentItemText = txz01;
     OrderQuantity = menge;
     OrderQuantityUnit = meins;
@@ -73,7 +74,7 @@ lock dependent by _PurchasingDocument
 
   field ( readonly, numbering : managed ) PurchasingDocumentItemId;
 
-  field( readonly ) PurchasingDocumentId, PurchasingDocument, PurchasingDocumentItem, DocumentCurrency;
+  field( readonly ) PurchasingDocumentId, PurchasingDocument, PurchasingDocumentItem, DocumentCurrency, MaterialGroupText;
 
   //field( mandatory ) OrderQuantity, NetPriceAmount;
 
