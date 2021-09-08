@@ -18,10 +18,8 @@ define view ZI_PurchasingDocumentItem
   matnr as Material,
   
   @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_MaterialGroup', element: 'MaterialGroup' } }]
-  //@ObjectModel.text.association: '_MaterialGroup'  
   matkl as MaterialGroup,
   concat(concat(concat(_MaterialGroup.MaterialGroupText, ' ('), matkl), ')') as MaterialGroupText,
-  //_MaterialGroup.MaterialGroupText as MaterialGroupText, 
   
   @Semantics.text: true
   txz01 as PurchasingDocumentItemText,

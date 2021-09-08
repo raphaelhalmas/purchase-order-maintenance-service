@@ -48,8 +48,6 @@ annotate view ZC_PurchasingDocumentItem with
   OrderQuantity;
   
   @UI.fieldGroup: [{ position: 50, label: 'Material Group', qualifier: 'FieldGroup1' }]
-  //@UI.lineItem: [{ importance: #HIGH, position: 50, label: 'Material Group'}]
-  //@UI.textArrangement: #TEXT_FIRST
   MaterialGroup;
  
   @UI.lineItem: [{ importance: #HIGH, position: 50, label: 'Material Group'}]

@@ -23,5 +23,4 @@ define view entity ZC_PurchasingDocumentItem
   DocumentCurrency,
   
   _PurchasingDocument : redirected to parent ZC_PurchasingDocument
-  //_MaterialGroup
 }
