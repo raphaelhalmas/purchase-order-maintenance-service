@@ -10,6 +10,7 @@ define table zdt_ekpo {
   ebeln                 : ebeln not null;
   ebelp                 : ebelp not null;
   matnr                 : abap.char(40);
+  matkl                 : abap.char(9);
   txz01                 : abap.char(40);
   @Semantics.quantity.unitOfMeasure : 'zdt_ekpo.meins'
   menge                 : abap.quan(13,2);
