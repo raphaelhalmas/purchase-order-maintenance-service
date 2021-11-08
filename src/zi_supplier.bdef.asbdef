@@ -1,0 +1,26 @@
+managed implementation in class ZBP_I_Supplier unique;
+//strict;
+
+define behavior for ZI_Supplier alias Supplier
+persistent table zdt_lfa1
+lock master
+//authorization master ( instance )
+etag master LastChangedAt
+{
+  mapping for zdt_lfa1
+  {
+    Supplier = lifnr;
+    SupplierName = name1;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+
+  //field ( readonly, numbering : managed ) Supplier;
+
+  create;
+  update;
+  delete;
+}
