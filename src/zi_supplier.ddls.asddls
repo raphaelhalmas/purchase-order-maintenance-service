@@ -4,7 +4,7 @@
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Supplier'
 @Search.searchable: true
-define view ZI_Supplier 
+define root view ZI_Supplier 
   as select from zdt_lfa1 {
   
   @EndUserText.label: 'Supplier'

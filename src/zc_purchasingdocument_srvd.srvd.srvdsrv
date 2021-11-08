@@ -8,4 +8,5 @@ define service ZC_PURCHASINGDOCUMENT_SRVD {
   expose ZI_PurchasingOrganization;
   expose ZI_PurchasingGroup;
   expose ZI_Supplier;
+  expose ZC_Supplier;
 }
