@@ -1,0 +1,40 @@
+@Metadata.layer: #CORE
+@Search.searchable:true
+
+@UI.headerInfo: {
+  title: {
+    type: #STANDARD, value: 'Supplier' 
+  },
+
+  typeName: 'Display Supplier', 
+  typeNamePlural: 'Suppliers'
+}
+
+@UI.presentationVariant: [{ sortOrder: [{ by: 'Supplier', direction: #ASC }], visualizations: [{ type: #AS_LINEITEM }] }]
+annotate view ZC_Supplier with
+{
+  @UI.facet: [{ 
+    id:'GeneralInformationCollectionFacet',
+    label:'General Information',    
+    purpose: #STANDARD,
+    type:#COLLECTION
+  },
+  
+  { 
+    id:'FieldGroupReferenceFacet1',    
+    label: 'General Data',    
+    parentId: 'GeneralInformationCollectionFacet',
+    purpose: #STANDARD,    
+    targetQualifier: 'FieldGroup1',
+    type:#FIELDGROUP_REFERENCE
+  }]
+
+  @Search.defaultSearchElement: true
+  @UI.lineItem: [{ position: 10, importance: #HIGH, label: 'Supplier' }]
+  Supplier;
+  
+  @Search.defaultSearchElement: true
+  @UI.fieldGroup: [{ position: 20, label: 'Name of Supplier', qualifier: 'FieldGroup1' }]
+  @UI.lineItem: [{ position: 20, importance: #HIGH, label: 'Name of Supplier' }]  
+  SupplierName;
+}

@@ -6,7 +6,7 @@
 define root view entity ZC_Supplier 
   provider contract transactional_query
   as projection on ZI_Supplier
-{  
+{ 
   key Supplier,
   SupplierName
   
