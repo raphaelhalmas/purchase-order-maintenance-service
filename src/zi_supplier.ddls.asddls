@@ -7,9 +7,11 @@
 define root view ZI_Supplier 
   as select from zdt_lfa1 {
   
+  key supplier_id as SupplierId,
+  
   @EndUserText.label: 'Supplier'
   @ObjectModel.text.element: ['SupplierName']  
-  key lifnr as Supplier,    
+  lifnr as Supplier,    
   
   @EndUserText.label: 'Name of Supplier'
   @Search.defaultSearchElement: true
