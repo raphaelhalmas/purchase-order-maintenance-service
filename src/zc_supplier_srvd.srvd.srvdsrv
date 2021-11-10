@@ -1,0 +1,5 @@
+@EndUserText.label: 'Supplier SD'
+define service ZC_SUPPLIER_SRVD {
+  expose ZI_Supplier;
+  expose ZC_Supplier;
+}
