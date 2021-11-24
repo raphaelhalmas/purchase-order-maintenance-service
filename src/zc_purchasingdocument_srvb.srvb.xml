@@ -27,6 +27,12 @@
        <TITLE>TESTCLASS</TITLE>
       </item>
       <item>
+       <HREF>/sap/bc/adt/businessservices/testclass</HREF>
+       <REL>http://www.sap.com/categories/testclass</REL>
+       <TYPE>application/vnd.sap.adt.businessservices.testclassv4.v1+xml</TYPE>
+       <TITLE>TESTCLASSV4</TITLE>
+      </item>
+      <item>
        <HREF>/sap/bc/adt/businessservices/semanticversion</HREF>
        <REL>http://www.sap.com/categories/semanticversion</REL>
        <TYPE>application/vnd.sap.adt.businessservices.semanticversion.v1+xml</TYPE>

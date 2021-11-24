@@ -12,7 +12,10 @@ CLASS ZCL_Generate_T024_Data DEFINITION
 
 ENDCLASS.
 
-CLASS ZCL_Generate_T024_Data IMPLEMENTATION.
+
+
+CLASS ZCL_GENERATE_T024_DATA IMPLEMENTATION.
+
 
   METHOD if_oo_adt_classrun~main.
     DATA lt_t024 TYPE TABLE OF zdt_t024.
@@ -26,5 +29,4 @@ CLASS ZCL_Generate_T024_Data IMPLEMENTATION.
 
     out->write( |{ sy-dbcnt } T024 entries inserted successfully!| ).
   ENDMETHOD.
-
 ENDCLASS.

@@ -12,7 +12,10 @@ CLASS ZCL_Generate_EKKO_Data DEFINITION
 
 ENDCLASS.
 
-CLASS ZCL_Generate_EKKO_Data IMPLEMENTATION.
+
+
+CLASS ZCL_GENERATE_EKKO_DATA IMPLEMENTATION.
+
 
   METHOD if_oo_adt_classrun~main.
     DATA lt_ekko TYPE TABLE OF zdt_ekko.
@@ -52,5 +55,4 @@ CLASS ZCL_Generate_EKKO_Data IMPLEMENTATION.
 
     out->write( |{ sy-dbcnt } EKKO entries inserted successfully!| ).
   ENDMETHOD.
-
 ENDCLASS.

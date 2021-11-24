@@ -12,7 +12,10 @@ CLASS ZCL_Generate_LFA1_Data DEFINITION
 
 ENDCLASS.
 
-CLASS ZCL_Generate_LFA1_Data IMPLEMENTATION.
+
+
+CLASS ZCL_GENERATE_LFA1_DATA IMPLEMENTATION.
+
 
   METHOD if_oo_adt_classrun~main.
     DATA lt_lfa1 TYPE TABLE OF zdt_lfa1.
@@ -44,5 +47,4 @@ CLASS ZCL_Generate_LFA1_Data IMPLEMENTATION.
 
     out->write( |{ sy-dbcnt } LFA1 entries inserted successfully!| ).
   ENDMETHOD.
-
 ENDCLASS.

@@ -12,7 +12,10 @@ CLASS ZCL_Generate_T001_Data DEFINITION
 
 ENDCLASS.
 
-CLASS ZCL_Generate_T001_Data IMPLEMENTATION.
+
+
+CLASS ZCL_GENERATE_T001_DATA IMPLEMENTATION.
+
 
   METHOD if_oo_adt_classrun~main.
     DATA lt_t001 TYPE TABLE OF zdt_t001.
@@ -26,5 +29,4 @@ CLASS ZCL_Generate_T001_Data IMPLEMENTATION.
 
     out->write( |{ sy-dbcnt } T001 entries inserted successfully!| ).
   ENDMETHOD.
-
 ENDCLASS.
